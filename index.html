@@ -4,91 +4,43 @@
   <title>My Website</title>
   <meta charset="UTF-8">
   <style>
-    body {
+    body{
       font-family: Arial;
-      background: #f2f2f2;
-      text-align: center;
+      background:#f2f2f2;
+      text-align:center;
+      padding-top:60px;
     }
-    .box {
-      background: white;
-      width: 300px;
-      margin: 50px auto;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #aaa;
+    .box{
+      background:white;
+      width:300px;
+      margin:auto;
+      padding:20px;
+      border-radius:10px;
+      box-shadow:0 0 10px #ccc;
     }
-    input {
-      width: 90%;
-      padding: 10px;
-      margin: 8px 0;
+    input,button{
+      width:90%;
+      padding:10px;
+      margin:8px 0;
     }
-    button {
-      padding: 10px 20px;
-      background: green;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .link {
-      color: blue;
-      cursor: pointer;
+    button{
+      background:green;
+      color:white;
+      border:none;
+      font-size:16px;
     }
   </style>
 </head>
 <body>
 
-<div class="box" id="registerBox">
+<div class="box">
   <h2>Register</h2>
-  <input type="text" id="rname" placeholder="Full Name">
-  <input type="email" id="remail" placeholder="Email">
-  <input type="text" id="rphone" placeholder="Mobile Number">
-  <input type="password" id="rpass" placeholder="Password">
-  <button onclick="register()">Register</button>
-  <p>Already have account? <span class="link" onclick="showLogin()">Login</span></p>
+  <input type="text" placeholder="Full Name">
+  <input type="email" placeholder="Email">
+  <input type="tel" placeholder="Phone Number">
+  <input type="password" placeholder="Password">
+  <button>Register</button>
 </div>
-
-<div class="box" id="loginBox" style="display:none;">
-  <h2>Login</h2>
-  <input type="email" id="lemail" placeholder="Email">
-  <input type="password" id="lpass" placeholder="Password">
-  <button onclick="login()">Login</button>
-  <p>No account? <span class="link" onclick="showRegister()">Register</span></p>
-</div>
-
-<script>
-function showLogin() {
-  document.getElementById("registerBox").style.display = "none";
-  document.getElementById("loginBox").style.display = "block";
-}
-
-function showRegister() {
-  document.getElementById("loginBox").style.display = "none";
-  document.getElementById("registerBox").style.display = "block";
-}
-
-function register() {
-  let email = document.getElementById("remail").value;
-  let pass = document.getElementById("rpass").value;
-  localStorage.setItem("email", email);
-  localStorage.setItem("pass", pass);
-  alert("Register Successful!");
-  showLogin();
-}
-
-function login() {
-  let email = document.getElementById("lemail").value;
-  let pass = document.getElementById("lpass").value;
-  let se = localStorage.getItem("email");
-  let sp = localStorage.getItem("pass");
-
-  if(email === se && pass === sp){
-    alert("Login Successful!");
-  } else {
-    alert("Wrong Email or Password");
-  }
-}
-</script>
 
 </body>
 </html>
