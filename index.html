@@ -1,65 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Register with OTP</title>
+  <title>Register</title>
   <meta charset="UTF-8">
   <style>
-    body{
+    body {
       font-family: Arial;
-      background:#f2f2f2;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      height:100vh;
+      background: #f2f2f2;
     }
-    .box{
-      background:#fff;
-      padding:20px;
-      width:300px;
-      border-radius:10px;
-      box-shadow:0 0 10px #ccc;
-      text-align:center;
+    .box {
+      width: 300px;
+      margin: 80px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+      text-align: center;
     }
-    input,button{
-      width:90%;
-      padding:10px;
-      margin:8px 0;
+    input, button {
+      width: 90%;
+      padding: 10px;
+      margin: 8px 0;
     }
-    button{
-      background:green;
-      color:white;
-      border:none;
-      font-size:16px;
-      cursor:pointer;
+    button {
+      background: green;
+      color: white;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
     }
-    #otpBox{display:none;}
   </style>
 </head>
 <body>
 
 <div class="box">
   <h2>Register</h2>
-  <input id="name" placeholder="Full Name">
-  <input id="email" placeholder="Email">
-  <input id="phone" placeholder="+91xxxxxxxxxx">
-  <input id="pass" type="password" placeholder="Password">
-
-  <div id="recaptcha"></div>
-
-  <button onclick="sendOTP()">Send OTP</button>
-
-  <div id="otpBox">
-    <input id="otp" placeholder="Enter OTP">
-    <button onclick="verifyOTP()">Verify & Register</button>
-  </div>
+  <input type="text" id="name" placeholder="Full Name">
+  <input type="email" id="email" placeholder="Email">
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="register()">Register</button>
+  <p id="msg"></p>
 </div>
 
-<!-- Firebase -->
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 
 <script>
-  // 🔴 YAHAN APNA FIREBASE CONFIG PASTE KARO
 const firebaseConfig = {
   apiKey: "AIzaSyCSKLOKjHWNImv5bmxzOTCthvQd8iWa6aQ",
   authDomain: "big-d28e3.firebaseapp.com",
@@ -73,41 +59,19 @@ const firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
   const auth = firebase.auth();
 
-  window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha', {
-    size: 'normal'
-  });
-  recaptchaVerifier.render();
+  function register() {
+    let email = document.getElementById("email").value;
+    let pass = document.getElementById("password").value;
 
-  let confirmationResult;
-
-  function sendOTP(){
-    let phone = document.getElementById("phone").value;
-    if(phone==""){
-      alert("Phone number daalo");
-      return;
-    }
-    auth.signInWithPhoneNumber(phone, recaptchaVerifier)
-      .then(result=>{
-        confirmationResult = result;
-        document.getElementById("otpBox").style.display="block";
-        alert("OTP bhej diya gaya hai");
+    auth.createUserWithEmailAndPassword(email, pass)
+      .then(() => {
+        document.getElementById("msg").innerText = "Registration successful!";
       })
-      .catch(err=>{
-        alert(err.message);
-      });
-  }
-
-  function verifyOTP(){
-    let code = document.getElementById("otp").value;
-    confirmationResult.confirm(code)
-      .then(()=>{
-        alert("OTP Verified! Registration successful");
-      })
-      .catch(()=>{
-        alert("Galat OTP");
+      .catch((error) => {
+        document.getElementById("msg").innerText = error.message;
       });
   }
 </script>
 
 </body>
-</hthtm
+</html>
