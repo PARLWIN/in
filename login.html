@@ -1,28 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | BIGPRO</title>
   <style>
-    body{font-family:Arial;background:#f2f2f2}
-    .box{width:300px;margin:100px auto;background:#fff;padding:20px;border-radius:10px}
-    input,button{width:100%;padding:10px;margin:8px 0}
-    button{background:green;color:white;border:none}
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #4a00e0, #8e2de2);
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
+    }
+    .container {
+      background: rgba(0,0,0,0.6);
+      padding: 30px;
+      border-radius: 12px;
+      width: 95%;
+      max-width: 380px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .container input {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 8px;
+    }
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: #ffd700;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #000;
+      margin-top: 12px;
+    }
+    .btn:hover {
+      background: #ffca00;
+    }
+    .text-center {
+      text-align: center;
+      margin-top: 12px;
+    }
+    .text-center a {
+      color: #ffe066;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .error {
+      background: #e74c3c;
+      padding: 8px;
+      border-radius: 8px;
+      text-align: center;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
-  <div class="box">
-    <h2>Login</h2>
-    <input type="email" id="email" placeholder="Email">
-    <input type="password" id="password" placeholder="Password">
-    <button onclick="login()">Login</button>
-    <p id="msg"></p>
-  </div>
 
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<div class="container">
+  <h2>Login to BIGPRO</h2>
 
-  <script>
-const firebaseConfig = {
+  <input type="email" id="lemail" placeholder="Enter your email" required>
+  <input type="password" id="lpass" placeholder="Enter password" required>
+  <button class="btn" onclick="login()">Login</button>
+
+  <p class="text-center">New user? <a href="index.html">Register here</a></p>
+
+  <p id="errorMsg" class="error" style="display:none"></p>
+</div>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
+<script>
+  const firebaseConfig = {
   apiKey: "AIzaSyCSKLOKjHWNImv5bmxzOTCthvQd8iWa6aQ",
   authDomain: "big-d28e3.firebaseapp.com",
   projectId: "big-d28e3",
@@ -30,22 +96,25 @@ const firebaseConfig = {
   messagingSenderId: "509862839346",
   appId: "1:509862839346:web:ec80fc33a33eb19610e82b",
   measurementId: "G-1P2EMECLBT"
-};
-    firebase.initializeApp(firebaseConfig);
+  };
+  firebase.initializeApp(firebaseConfig);
 
-    function login(){
-      const email = document.getElementById("email").value;
-      const pass = document.getElementById("password").value;
+  function login() {
+    const email = document.getElementById("lemail").value;
+    const pass = document.getElementById("lpass").value;
+    const errorDiv = document.getElementById("errorMsg");
 
-      firebase.auth().signInWithEmailAndPassword(email, pass)
-        .then(()=>{
-          alert("Login Successful");
-          window.location.href = "dashboard.html";
-        })
-        .catch(err=>{
-          document.getElementById("msg").innerText = err.message;
-        });
-    }
-  </script>
+    firebase.auth().signInWithEmailAndPassword(email, pass)
+      .then(() => {
+        errorDiv.style.display = "none";
+        window.location.href = "dashboard.html";
+      })
+      .catch((err) => {
+        errorDiv.innerText = err.message;
+        errorDiv.style.display = "block";
+      });
+  }
+</script>
+
 </body>
 </html>
