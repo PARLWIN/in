@@ -2,69 +2,111 @@
 <html>
 <head>
   <title>Register with OTP</title>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <meta charset="UTF-8">
+  <style>
+    body{
+      font-family: Arial;
+      background:#f2f2f2;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+    }
+    .box{
+      background:#fff;
+      padding:20px;
+      width:300px;
+      border-radius:10px;
+      box-shadow:0 0 10px #ccc;
+      text-align:center;
+    }
+    input,button{
+      width:90%;
+      padding:10px;
+      margin:8px 0;
+    }
+    button{
+      background:green;
+      color:white;
+      border:none;
+      font-size:16px;
+      cursor:pointer;
+    }
+    #otpBox{display:none;}
+  </style>
 </head>
-<body style="font-family:Arial; background:#f2f2f2;">
+<body>
 
-<div style="width:300px;margin:50px auto;padding:20px;background:#fff;border-radius:10px;">
+<div class="box">
   <h2>Register</h2>
+  <input id="name" placeholder="Full Name">
+  <input id="email" placeholder="Email">
+  <input id="phone" placeholder="+91xxxxxxxxxx">
+  <input id="pass" type="password" placeholder="Password">
 
-  <input id="phone" placeholder="Phone with country code" style="width:100%;padding:8px;"><br><br>
-  <button onclick="sendOTP()" style="width:100%;padding:10px;background:green;color:white;">Send OTP</button>
+  <div id="recaptcha"></div>
 
-  <div id="otpBox" style="display:none;">
-    <br>
-    <input id="otp" placeholder="Enter OTP" style="width:100%;padding:8px;"><br><br>
-    <button onclick="verifyOTP()" style="width:100%;padding:10px;background:blue;color:white;">Verify OTP</button>
+  <button onclick="sendOTP()">Send OTP</button>
+
+  <div id="otpBox">
+    <input id="otp" placeholder="Enter OTP">
+    <button onclick="verifyOTP()">Verify & Register</button>
   </div>
-
-  <div id="recaptcha-container"></div>
 </div>
 
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
 <script>
+  // 🔴 YAHAN APNA FIREBASE CONFIG PASTE KARO
   const firebaseConfig = {
-    apiKey: "YAHAN_API_KEY",
-    authDomain: "YAHAN_AUTH_DOMAIN",
-    projectId: "YAHAN_PROJECT_ID",
-    appId: "YAHAN_APP_ID"
+    apiKey: "PASTE_HERE",
+    authDomain: "PASTE_HERE",
+    projectId: "PASTE_HERE",
+    storageBucket: "PASTE_HERE",
+    messagingSenderId: "PASTE_HERE",
+    appId: "PASTE_HERE"
   };
 
   firebase.initializeApp(firebaseConfig);
   const auth = firebase.auth();
 
-  window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
-    'recaptcha-container',
-    { size: 'invisible' },
-    auth
-  );
+  window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha', {
+    size: 'normal'
+  });
+  recaptchaVerifier.render();
 
   let confirmationResult;
 
-  function sendOTP() {
+  function sendOTP(){
     let phone = document.getElementById("phone").value;
-    auth.signInWithPhoneNumber(phone, window.recaptchaVerifier)
-      .then((result) => {
+    if(phone==""){
+      alert("Phone number daalo");
+      return;
+    }
+    auth.signInWithPhoneNumber(phone, recaptchaVerifier)
+      .then(result=>{
         confirmationResult = result;
-        alert("OTP sent!");
-        document.getElementById("otpBox").style.display = "block";
+        document.getElementById("otpBox").style.display="block";
+        alert("OTP bhej diya gaya hai");
       })
-      .catch((error) => {
-        alert(error.message);
+      .catch(err=>{
+        alert(err.message);
       });
   }
 
-  function verifyOTP() {
+  function verifyOTP(){
     let code = document.getElementById("otp").value;
     confirmationResult.confirm(code)
-      .then((result) => {
-        alert("Phone verified! User ID: " + result.user.uid);
+      .then(()=>{
+        alert("OTP Verified! Registration successful");
       })
-      .catch((error) => {
-        alert("Wrong OTP");
+      .catch(()=>{
+        alert("Galat OTP");
       });
   }
 </script>
 
 </body>
-</html>
+</hthtm
