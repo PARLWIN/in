@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <meta charset="UTF-8">
+  <style>
+    body{
+      font-family: Arial;
+      background:#f2f2f2;
+      text-align:center;
+      padding-top:60px;
+    }
+    .box{
+      background:white;
+      width:300px;
+      margin:auto;
+      padding:20px;
+      border-radius:10px;
+      box-shadow:0 0 10px #ccc;
+    }
+    button{
+      background:green;
+      color:white;
+      border:none;
+      padding:10px 20px;
+      cursor:pointer;
+      border-radius:5px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <h2>Welcome to BIGPRO</h2>
+  <p>Login ho chuka hai</p>
+  <button onclick="logout()">Logout</button>
+</div>
+
+<script>
+function logout(){
+  alert("Logout ho gaya");
+  window.location.href="login.html";
+}
+</script>
+
+</body>
+</html>
