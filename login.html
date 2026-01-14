@@ -1,102 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<title>BIGPRO Login</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<title>BIGPRO</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
-
+*{box-sizing:border-box;font-family:Arial,sans-serif}
 body{
+  margin:0;
   min-height:100vh;
   display:flex;
   justify-content:center;
   align-items:center;
-  background:
-   radial-gradient(circle at top,#ff4fd8,transparent 40%),
-   linear-gradient(135deg,#12004a,#2b007a,#ff008c);
-  background-size:cover;
-}
-
-.card{
-  width:92%;
-  max-width:430px;
-  padding:30px 25px;
-  border-radius:26px;
-  background:linear-gradient(180deg,rgba(0,40,120,.7),rgba(80,0,150,.7));
-  backdrop-filter:blur(10px);
-  border:1px solid rgba(255,255,255,.15);
-  box-shadow:
-   0 0 25px rgba(255,0,255,.5),
-   0 0 50px rgba(0,200,255,.4);
+  background:radial-gradient(circle at top,#444,#000 60%,#000);
   color:white;
-  text-align:center;
+}
+
+/* CARD */
+.card{
+  width:90%;
+  max-width:380px;
+  padding:28px 24px;
+  border-radius:28px;
+  background:linear-gradient(180deg,#111,#000);
   position:relative;
+  box-shadow:
+    0 0 25px rgba(255,215,0,.6),
+    0 0 50px rgba(255,165,0,.4);
+}
+.card::before{
+  content:"";
+  position:absolute;
+  inset:-4px;
+  border-radius:32px;
+  background:linear-gradient(45deg,#ffcc00,#ff8800,#ffd700,#ffcc00);
+  z-index:-1;
+  filter:blur(12px);
 }
 
+/* TEXT */
 .logo{
+  text-align:center;
   font-size:32px;
-  font-weight:800;
-  color:#ffcc00;
-  margin-bottom:5px;
-  text-shadow:0 0 15px rgba(255,200,0,.8);
+  font-weight:900;
+  color:#ffd700;
+  text-shadow:0 0 15px #ffcc00;
+}
+.sub{
+  text-align:center;
+  margin:6px 0 18px;
+  color:#ccc;
 }
 
-h2{margin-bottom:20px;font-size:18px;color:#fff;}
-
-.input-box{
-  background:rgba(255,255,255,.08);
-  border-radius:14px;
+/* INPUT */
+.field{
   display:flex;
   align-items:center;
+  margin-bottom:14px;
+  background:rgba(255,255,255,.06);
+  border-radius:16px;
   padding:12px 14px;
-  margin-bottom:15px;
-  border:1px solid rgba(255,255,255,.15);
+  box-shadow:
+    inset 0 0 12px rgba(255,215,0,.15),
+    0 0 12px rgba(255,215,0,.2);
 }
-
-.input-box img{
-  width:22px;
-  margin-right:10px;
-}
-
-.input-box input{
+.field span{margin-right:10px;font-size:18px;color:#ffd700}
+.field input{
+  flex:1;
   background:none;
   border:none;
   outline:none;
   color:white;
-  font-size:16px;
-  width:100%;
+  font-size:15px;
 }
+.eye{cursor:pointer;color:#ffd700}
 
+/* BUTTON */
 .btn{
-  width:100%;
+  margin:20px 0 12px;
   padding:14px;
-  border:none;
   border-radius:30px;
-  font-size:18px;
-  font-weight:700;
-  background:linear-gradient(90deg,#ffd000,#ff9900);
-  color:#000;
-  margin:10px 0 15px;
-  box-shadow:0 0 25px rgba(255,200,0,.9);
+  text-align:center;
+  font-weight:bold;
+  font-size:17px;
+  background:linear-gradient(90deg,#ffcc00,#ff9900);
+  color:black;
+  box-shadow:
+    0 0 25px rgba(255,200,0,.9),
+    0 0 45px rgba(255,140,0,.6);
 }
 
-.btn:active{transform:scale(.97);}
-
-a{color:#ffcc00;text-decoration:none;font-weight:600;}
-
-.footer{
-  margin-top:15px;
+/* LINKS */
+.small{
+  text-align:center;
+  margin-bottom:10px;
+  color:#ccc;
+}
+.bottom{
   display:flex;
   justify-content:space-between;
-  font-size:14px;
-}
-
-.footer div{
-  display:flex;
-  align-items:center;
-  gap:6px;
+  font-size:13px;
+  opacity:.9;
+  color:#ffd700;
 }
 </style>
 </head>
@@ -104,30 +108,34 @@ a{color:#ffcc00;text-decoration:none;font-weight:600;}
 <body>
   <div class="card">
     <div class="logo">BIGPRO</div>
-    <h2>Login to BIGPRO</h2>
+    <div class="sub">Login to BIGPRO</div>
 
-    <div class="input-box">
-      <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png">
+    <div class="field">
+      <span>📧</span>
       <input type="email" placeholder="Enter your email">
     </div>
 
-    <div class="input-box">
-      <img src="https://cdn-icons-png.flaticon.com/512/3064/3064155.png">
-      <input type="password" placeholder="Enter password">
+    <div class="field">
+      <span>🔒</span>
+      <input type="password" placeholder="Enter password" id="pass">
+      <span class="eye" onclick="toggle()">👁</span>
     </div>
 
-    <button class="btn">Login</button>
+    <div class="btn">Login</div>
 
-    <div>New user? <a href="#">Register here</a></div>
+    <div class="small">New user? <b style="color:#ffd700">Register here</b></div>
 
-    <div class="footer">
-      <div>
-        🔑 <span>Forgot password</span>
-      </div>
-      <div>
-        🎧 <span>Customer Service</span>
-      </div>
+    <div class="bottom">
+      <div>🔑 Forgot password</div>
+      <div>🎧 Customer Service</div>
     </div>
   </div>
+
+<script>
+function toggle(){
+  let p=document.getElementById("pass");
+  p.type = p.type==="password" ? "text" : "password";
+}
+</script>
 </body>
 </html>
