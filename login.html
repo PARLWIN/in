@@ -8,12 +8,25 @@
 *{box-sizing:border-box;font-family:Segoe UI,Arial}
 body{
   margin:0;
+  padding:0;
+  width:100%;
+  height:100vh;
   min-height:100vh;
-  background: url("images/862464429d63305ff1445ec4c5272682.jpg") no-repeat center center fixed;
+  background:
+    radial-gradient(circle at top, #6a00ff, #2a0055),
+    url("images/862464429d63305ff1445ec4c5272682.jpg");
   background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
   display:flex;
   justify-content:center;
   align-items:center;
+  overflow:hidden;
+}
+
+html, body{
+  width:100%;
+  height:100%;
 }
 .card{
   width:92%;
