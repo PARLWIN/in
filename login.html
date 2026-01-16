@@ -2,154 +2,121 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>BIGPRO Register</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<title>BIGPRO Login</title>
 <style>
+*{box-sizing:border-box;font-family:Arial, sans-serif;}
 body{
   margin:0;
-  font-family: Arial, sans-serif;
-  background:#f6f7fb;
+  background:#f5f6fa;
 }
 .header{
-  background: linear-gradient(to right,#ff6b6b,#ff8a8a);
+  background:linear-gradient(135deg,#ff9800,#ffb74d);
+  padding:25px 20px;
   color:white;
-  padding:20px;
 }
-.header h1{
-  margin:0;
-  font-size:22px;
+.header h2{margin:0;}
+.tabs{
+  display:flex;
+  background:white;
+}
+.tab{
+  flex:1;
   text-align:center;
-}
-.header p{
-  margin:8px 0 0;
-  font-size:14px;
-}
-.container{
-  padding:20px;
-}
-.section-title{
-  text-align:center;
-  color:#ff6b6b;
+  padding:15px;
   font-weight:bold;
-  margin:15px 0;
+  color:#999;
 }
-.line{
-  height:2px;
-  background:#ff6b6b;
-  width:80%;
-  margin:0 auto 20px;
+.tab.active{
+  color:#ff9800;
+  border-bottom:3px solid #ff9800;
+}
+.form{
+  padding:20px;
 }
 .label{
-  color:#555;
-  margin:10px 0 5px;
-  display:flex;
-  align-items:center;
-  gap:8px;
+  margin-top:15px;
+  color:#666;
+  font-size:14px;
 }
 .input-box{
   display:flex;
-  gap:10px;
-}
-input{
-  width:100%;
-  padding:14px;
-  border-radius:12px;
-  border:none;
   background:white;
-  box-shadow:0 1px 5px rgba(0,0,0,0.05);
+  border-radius:10px;
+  padding:12px;
+  margin-top:5px;
+}
+.input-box input{
+  border:none;
+  outline:none;
+  width:100%;
   font-size:15px;
 }
-.small{
-  width:70px;
-  text-align:center;
-}
 .checkbox{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin:15px 0;
-  color:#666;
+  margin-top:10px;
   font-size:14px;
-}
-.checkbox span{
-  color:#ff6b6b;
+  color:#777;
 }
 .btn{
-  background: linear-gradient(to right,#ff6b6b,#ff8a8a);
-  color:white;
-  border:none;
   width:100%;
-  padding:15px;
+  padding:14px;
+  margin-top:20px;
+  border:none;
   border-radius:30px;
-  font-size:18px;
-  font-weight:bold;
-}
-.bottom{
-  text-align:center;
-  margin-top:10px;
-  color:#666;
-}
-.bottom span{
-  color:#ff6b6b;
-  font-weight:bold;
-}
-.chat{
-  position:fixed;
-  right:15px;
-  bottom:80px;
-  background:#ff6b6b;
-  width:50px;
-  height:50px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  background:#ff9800;
   color:white;
-  font-size:22px;
+  font-size:18px;
+}
+.btn-outline{
+  background:white;
+  border:2px solid #ff9800;
+  color:#ff9800;
+}
+.center{
+  text-align:center;
+  margin-top:15px;
+}
+.service{
+  margin-top:25px;
+  text-align:center;
+  color:#ff9800;
 }
 </style>
 </head>
 <body>
 
 <div class="header">
-  <h1>🏆 BIGPRO</h1>
-  <p>Please register by phone number or email</p>
+  <h2>Log in</h2>
+  <p>Please log in with your phone number or email</p>
 </div>
 
-<div class="container">
+<div class="tabs">
+  <div class="tab active">Log in with phone</div>
+  <div class="tab">Email Login</div>
+</div>
 
-  <div class="section-title">Register your phone</div>
-  <div class="line"></div>
-
-  <div class="label">📱 Phone number</div>
+<div class="form">
+  <div class="label">Phone number</div>
   <div class="input-box">
-    <input class="small" value="+91">
-    <input placeholder="Please enter the phone number">
+    <input type="text" placeholder="+91  Please enter the phone number">
   </div>
 
-  <div class="label">🔒 Set password</div>
-  <input placeholder="Set password" type="password">
-
-  <div class="label">🔒 Confirm password</div>
-  <input placeholder="Confirm password" type="password">
-
-  <div class="label">🎫 Invite code</div>
-  <input value="dljso1685078">
+  <div class="label">Password</div>
+  <div class="input-box">
+    <input type="password" placeholder="Please enter Password">
+  </div>
 
   <div class="checkbox">
-    <input type="checkbox">
-    <div>I have read and agree <span>[Privacy Agreement]</span></div>
+    <input type="checkbox"> Remember password
   </div>
 
-  <button class="btn">Register</button>
+  <button class="btn">Log in</button>
+  <button class="btn btn-outline" onclick="location.href='index.html'">Register</button>
 
-  <div class="bottom">
-    I have an account <span>Login</span>
+  <div class="service">
+    Customer Service
   </div>
 </div>
-
-<div class="chat">💬</div>
 
 </body>
 </html>
