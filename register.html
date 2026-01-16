@@ -1,174 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>BIGPRO Register</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <style>
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:#f8f8f8;
+    }
+    .top{
+      background:#e53935;
+      color:white;
+      text-align:center;
+      padding:20px 10px;
+      font-size:20px;
+      font-weight:bold;
+    }
+    .box{
+      padding:20px;
+    }
+    .label{
+      margin-top:15px;
+      font-weight:bold;
+      color:#333;
+    }
+    .input-box{
+      background:#fff;
+      border-radius:25px;
+      padding:12px 15px;
+      margin-top:5px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      box-shadow:0 2px 5px rgba(0,0,0,0.1);
+    }
+    .input-box input{
+      border:none;
+      outline:none;
+      width:100%;
+      font-size:15px;
+    }
+    .checkbox{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-top:15px;
+      font-size:14px;
+      color:#555;
+    }
+    .checkbox span{
+      color:#e53935;
+      font-weight:bold;
+    }
+    .btn{
+      width:100%;
+      background:#e53935;
+      color:white;
+      border:none;
+      border-radius:30px;
+      padding:15px;
+      font-size:18px;
+      font-weight:bold;
+      margin-top:20px;
+    }
+    .bottom{
+      text-align:center;
+      margin-top:15px;
+      color:#666;
+    }
+    .bottom a{
+      color:#e53935;
+      font-weight:bold;
+      text-decoration:none;
+    }
 
-<style>
-body{
-  margin:0;
-  font-family: Arial, sans-serif;
-  background:#f6f7fb;
-}
-.header{
-  background: linear-gradient(to right,#ff6b6b,#ff8a8a);
-  color:white;
-  padding:20px;
-}
-.header h1{
-  margin:0;
-  font-size:22px;
-  text-align:center;
-}
-.header p{
-  margin:8px 0 0;
-  font-size:14px;
-}
-.container{
-  padding:20px;
-}
-.section-title{
-  text-align:center;
-  color:#ff6b6b;
-  font-weight:bold;
-  margin:15px 0;
-}
-.line{
-  height:2px;
-  background:#ff6b6b;
-  width:80%;
-  margin:0 auto 20px;
-}
-.label{
-  font-weight:600;
-  font-size:15px;
-  color:#444;
-  font-size:15px
-  font-weight:600;
-  margin:10px 0 5px;
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
-.input-box{
-  display:flex;
-  gap:10px;
-}
-input{
-  width:100%;
-  padding:14px;
-  border-radius:12px;
-  border:none;
-  background:white;
-  box-shadow:0 1px 5px rgba(0,0,0,0.05);
-  font-size:15px;
-}
-.small{
-  width:70px;
-  text-align:center;
-}
-.checkbox{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin:15px 0;
-  color:#666;
-  font-size:14px;
-}
-.checkbox span{
-  color:#ff6b6b;
-}
-.btn{
-  background: linear-gradient(to right,#ff6b6b,#ff8a8a);
-  color:white;
-  border:none;
-  width:100%;
-  padding:15px;
-  border-radius:30px;
-  font-size:18px;
-  font-weight:bold;
-}
-.bottom{
-  text-align:center;
-  margin-top:10px;
-  color:#666;
-}
-.bottom span{
-  color:#ff6b6b;
-  font-weight:bold;
-  text-decoration:none
-  .bottom a{
-  color:#ff6b6b;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-.bottom a:visited{
-  color:#ff6b6b;
-}
-
-.bottom a:hover{
-  color:#ff6b6b;
-}
-.chat{
-  position: fixed;
-  right: 15px;
-  bottom: 15px;
-  width: 60px;
-  height: 60px;
-  background: #ff0000;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 26px;
-  color: white;
-  box-shadow: 0 5px 12px rgba(0,0,0,0.4);
-  z-index: 999999;
-  }
-</style>
+    /* Chat Icon */
+    .chat{
+      position:fixed;
+      right:15px;
+      bottom:15px;
+      width:65px;
+      height:65px;
+      background:#e53935;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:30px;
+      color:white;
+      box-shadow:0 6px 15px rgba(0,0,0,0.35);
+      z-index:999999;
+    }
+  </style>
 </head>
 <body>
 
-<div class="header">
-  <h1>🏆 BIGPRO</h1>
-  <p>Please register by phone number or email</p>
-</div>
+  <div class="top">Register your phone</div>
 
-<div class="container">
+  <div class="box">
+    <div class="label">📱 Phone number</div>
+    <div class="input-box">
+      <span>+91</span>
+      <input type="text" placeholder="Please enter the phone number">
+    </div>
 
-  <div class="section-title">Register your phone</div>
-  <div class="line"></div>
+    <div class="label">🔒 Set password</div>
+    <div class="input-box">
+      <input type="password" placeholder="Set password">
+    </div>
 
-  <div class="label">📱 Phone number</div>
-  <div class="input-box">
-    <input class="small" value="+91">
-    <input placeholder="Please enter the phone number">
+    <div class="label">🔒 Confirm password</div>
+    <div class="input-box">
+      <input type="password" placeholder="Confirm password">
+    </div>
+
+    <div class="label">💳 Invite code</div>
+    <div class="input-box">
+      <input type="text" placeholder="Invite code">
+    </div>
+
+    <div class="checkbox">
+      <input type="checkbox">
+      <div>I have read and agree <span>[Privacy Agreement]</span></div>
+    </div>
+
+    <button class="btn">Register</button>
+
+    <div class="bottom">
+      I have an account <a href="login.html">Login</a>
+    </div>
   </div>
 
-  <div class="label">🔒 Set password</div>
-  <input placeholder="Set password" type="password">
-
-  <div class="label">🔒 Confirm password</div>
-  <input placeholder="Confirm password" type="password">
-
-  <div class="label">🎫 Invite code</div>
-  <input value="123456...">
-
-  <div class="checkbox">
-    <input type="checkbox">
-    <div>I have read and agree <span>[Privacy Agreement]</span></div>
-  </div>
-
-  <button class="btn">Register</button>
-
-  <div class="bottom">
-    I have an account <span><a href="login.html">Login</a>
-  </div>
-</div>
-
-<div class="chat">💬</div>
+  <!-- Chat Icon -->
+  <div class="chat">💬</div>
 
 </body>
 </html>
