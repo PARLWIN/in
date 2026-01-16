@@ -1,84 +1,151 @@
-      <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>BIGPRO - Register</title>
 <style>
-body{margin:0;font-family:Arial;background:#f5f6f8;}
+body{
+  margin:0;
+  font-family:Arial;
+  background:#f5f6f8;
+  display:flex;
+  justify-content:center;
+}
+.main{
+  width:100%;
+  max-width:420px;
+  background:#f5f6f8;
+  min-height:100vh;
+}
 .header{
   background:linear-gradient(90deg,#ff7a7a,#ff5a5a);
-  color:white;text-align:center;padding:15px;
+  color:white;
+  text-align:center;
+  padding:16px;
 }
 .header h1{margin:0;font-size:22px;}
 .header p{margin:5px 0 0;font-size:14px;}
-.box{padding:15px;}
-.title{text-align:center;color:#ff6b6b;font-weight:bold;margin:15px 0;}
-.line{width:120px;height:3px;background:#ff6b6b;margin:5px auto 15px;}
-.label{margin:10px 0 5px;font-weight:bold;color:#555;}
-.input-row{
-  background:white;border-radius:15px;padding:12px;
-  display:flex;gap:8px;align-items:center;
+.box{padding:16px;}
+.title{
+  text-align:center;
+  color:#ff6b6b;
+  font-weight:bold;
+  font-size:18px;
+  margin:15px 0 5px;
 }
-.input-row input{border:none;outline:none;width:100%;font-size:15px;}
-.checkbox{margin:15px 0;color:#666;}
+.line{
+  width:120px;
+  height:3px;
+  background:#ff6b6b;
+  margin:0 auto 15px;
+}
+.label{
+  margin:12px 0 6px;
+  font-weight:bold;
+  color:#555;
+  font-size:15px;
+}
+.input-row{
+  background:white;
+  border-radius:18px;
+  padding:14px;
+  display:flex;
+  gap:10px;
+  align-items:center;
+  font-size:16px;
+}
+.input-row input{
+  border:none;
+  outline:none;
+  width:100%;
+  font-size:16px;
+}
+.checkbox{
+  margin:18px 0;
+  color:#666;
+  font-size:14px;
+}
 .checkbox span{color:#ff6b6b;}
 .btn{
   background:linear-gradient(90deg,#ff7a7a,#ff5a5a);
-  color:white;text-align:center;padding:15px;
-  border-radius:30px;font-size:18px;font-weight:bold;
+  color:white;
+  text-align:center;
+  padding:16px;
+  border-radius:35px;
+  font-size:18px;
+  font-weight:bold;
 }
-.bottom{text-align:center;margin-top:10px;color:#666;}
-.bottom a{color:#ff6b6b;font-weight:bold;text-decoration:none;}
+.bottom{
+  text-align:center;
+  margin-top:12px;
+  color:#666;
+  font-size:14px;
+}
+.bottom a{
+  color:#ff6b6b;
+  font-weight:bold;
+  text-decoration:none;
+}
 .chat{
-  position:fixed;right:15px;bottom:20px;
-  width:55px;height:55px;border-radius:50%;
-  background:#ff5a5a;display:flex;
-  align-items:center;justify-content:center;
+  position:fixed;
+  right:18px;
+  bottom:22px;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  background:#ff5a5a;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
-.chat span{font-size:24px;color:white;}
+.chat span{font-size:26px;color:white;}
 </style>
 </head>
 <body>
 
-<div class="header">
-  <h1>🏆 BIGPRO</h1>
-  <p>Please register by phone number or email</p>
-</div>
+<div class="main">
 
-<div class="box">
-  <div class="title">Register your phone</div>
-  <div class="line"></div>
-
-  <div class="label">📱 Phone number</div>
-  <div class="input-row">
-    <span>+91</span>
-    <input placeholder="Please enter the phone number">
+  <div class="header">
+    <h1>🏆 BIGPRO</h1>
+    <p>Please register by phone number or email</p>
   </div>
 
-  <div class="label">🔒 Set password</div>
-  <div class="input-row">
-    <input placeholder="Set password">
+  <div class="box">
+    <div class="title">Register your phone</div>
+    <div class="line"></div>
+
+    <div class="label">📱 Phone number</div>
+    <div class="input-row">
+      <span>+91</span>
+      <input placeholder="Please enter the phone number">
+    </div>
+
+    <div class="label">🔒 Set password</div>
+    <div class="input-row">
+      <input placeholder="Set password">
+    </div>
+
+    <div class="label">🔒 Confirm password</div>
+    <div class="input-row">
+      <input placeholder="Confirm password">
+    </div>
+
+    <div class="label">🎟 Invite code</div>
+    <div class="input-row">
+      <input placeholder="invite code">
+    </div>
+
+    <div class="checkbox">
+      <input type="checkbox"> I have read and agree <span>[Privacy Agreement]</span>
+    </div>
+
+    <div class="btn">Register</div>
+
+    <div class="bottom">
+      I have an account <a href="login.html">Login</a>
+    </div>
   </div>
 
-  <div class="label">🔒 Confirm password</div>
-  <div class="input-row">
-    <input placeholder="Confirm password">
-  </div>
-
-  <div class="label">🎟 Invite code</div>
-  <div class="input-row">
-    <input placeholder="invite code">
-  </div>
-
-  <div class="checkbox">
-    <input type="checkbox"> I have read and agree <span>[Privacy Agreement]</span>
-  </div>
-
-  <div class="btn">Register</div>
-
-  <div class="bottom">
-    I have an account <a href="login.html">Login</a>
-  </div>
 </div>
 
 <div class="chat"><span>💬</span></div>
