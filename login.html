@@ -1,202 +1,155 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
+<title>BIGPRO Register</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Register - BIGPRO</title>
+
 <style>
-* {
-  box-sizing: border-box;
+body{
+  margin:0;
   font-family: Arial, sans-serif;
+  background:#f6f7fb;
 }
-
-body {
-  margin: 0;
-  background: linear-gradient(180deg, #c40000, #ff4d4d);
-  min-height: 100vh;
+.header{
+  background: linear-gradient(to right,#ff6b6b,#ff8a8a);
+  color:white;
+  padding:20px;
 }
-
-/* Header */
-.header {
-  background: #d80000;
-  padding: 20px 10px;
-  text-align: center;
-  color: white;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+.header h1{
+  margin:0;
+  font-size:22px;
+  text-align:center;
 }
-
-.bigpro-title {
-  font-size: 28px;
-  font-weight: 900;
-  color: gold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  text-shadow: 
-    0 0 5px rgba(255,215,0,0.7),
-    0 0 10px rgba(255,180,0,0.8),
-    0 0 20px rgba(255,120,0,0.9);
+.header p{
+  margin:8px 0 0;
+  font-size:14px;
 }
-
-.logo-icon {
-  font-size: 30px;
-  filter: drop-shadow(0 0 6px gold);
+.container{
+  padding:20px;
 }
-
-.header p {
-  margin-top: 6px;
-  font-size: 14px;
-  opacity: 0.9;
+.section-title{
+  text-align:center;
+  color:#ff6b6b;
+  font-weight:bold;
+  margin:15px 0;
 }
-
-/* White Card */
-.container {
-  background: #fff;
-  margin: -20px auto 0;
-  width: 92%;
-  max-width: 420px;
-  border-radius: 20px;
-  padding: 20px 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+.line{
+  height:2px;
+  background:#ff6b6b;
+  width:80%;
+  margin:0 auto 20px;
 }
-
-/* Title */
-.container h2 {
-  text-align: center;
-  color: #c40000;
-  margin-bottom: 12px;
+.label{
+  color:#555;
+  margin:10px 0 5px;
+  display:flex;
+  align-items:center;
+  gap:8px;
 }
-
-/* Labels */
-label {
-  font-weight: 600;
-  margin-top: 10px;
-  display: block;
-  color: #444;
+.input-box{
+  display:flex;
+  gap:10px;
 }
-
-/* Inputs */
-input, select {
-  width: 100%;
-  padding: 12px;
-  margin-top: 6px;
-  border-radius: 10px;
-  border: 1.5px solid #ddd;
-  outline: none;
-  font-size: 15px;
+input{
+  width:100%;
+  padding:14px;
+  border-radius:12px;
+  border:none;
+  background:white;
+  box-shadow:0 1px 5px rgba(0,0,0,0.05);
+  font-size:15px;
 }
-
-input:focus {
-  border-color: #ff3b3b;
-  box-shadow: 0 0 5px rgba(255,0,0,0.4);
+.small{
+  width:70px;
+  text-align:center;
 }
-
-/* Checkbox */
-.checkbox {
-  margin-top: 12px;
-  font-size: 14px;
+.checkbox{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:15px 0;
+  color:#666;
+  font-size:14px;
 }
-
-/* Register Button */
-.register-btn {
-  margin-top: 16px;
-  width: 100%;
-  padding: 14px;
-  border-radius: 30px;
-  border: none;
-  font-size: 17px;
-  font-weight: 700;
-  color: white;
-  background: linear-gradient(90deg, #ff0000, #ff5a5a);
-  box-shadow: 0 0 10px rgba(255,0,0,0.6),
-              0 0 20px rgba(255,80,80,0.6);
+.checkbox span{
+  color:#ff6b6b;
 }
-
-.register-btn:active {
-  transform: scale(0.97);
+.btn{
+  background: linear-gradient(to right,#ff6b6b,#ff8a8a);
+  color:white;
+  border:none;
+  width:100%;
+  padding:15px;
+  border-radius:30px;
+  font-size:18px;
+  font-weight:bold;
 }
-
-/* Bottom Text */
-.bottom-text {
-  text-align: center;
-  margin-top: 12px;
-  font-size: 14px;
+.bottom{
+  text-align:center;
+  margin-top:10px;
+  color:#666;
 }
-
-.bottom-text a {
-  color: red;
-  font-weight: 700;
-  text-decoration: none;
+.bottom span{
+  color:#ff6b6b;
+  font-weight:bold;
 }
-
-/* Floating Support */
-.support-btn {
-  position: fixed;
-  right: 15px;
-  bottom: 15px;
-  width: 48px;
-  height: 48px;
-  background: red;
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 22px;
-  box-shadow: 0 0 10px rgba(255,0,0,0.6);
-  }
+.chat{
+  position:fixed;
+  right:15px;
+  bottom:80px;
+  background:#ff6b6b;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-size:22px;
+}
 </style>
 </head>
 <body>
 
 <div class="header">
-  <h1 class="bigpro-title">
-  <span class="logo-icon">♛</span> BIGPRO
-  </h1>
+  <h1>🏆 BIGPRO</h1>
   <p>Please register by phone number or email</p>
 </div>
 
-<div class="card">
+<div class="container">
+
   <div class="section-title">Register your phone</div>
+  <div class="line"></div>
 
-  <div class="input">
-    <label>Phone number</label>
-    <div class="row">
-      <input style="width:25%" value="+91">
-      <input style="width:75%" placeholder="Please enter the phone number">
-    </div>
+  <div class="label">📱 Phone number</div>
+  <div class="input-box">
+    <input class="small" value="+91">
+    <input placeholder="Please enter the phone number">
   </div>
 
-  <div class="input">
-    <label>Set password</label>
-    <input type="password" placeholder="Set password">
-  </div>
+  <div class="label">🔒 Set password</div>
+  <input placeholder="Set password" type="password">
 
-  <div class="input">
-    <label>Confirm password</label>
-    <input type="password" placeholder="Confirm password">
-  </div>
+  <div class="label">🔒 Confirm password</div>
+  <input placeholder="Confirm password" type="password">
 
-  <div class="input">
-    <label>Invite code</label>
-    <input value="dljs01685078">
-  </div>
+  <div class="label">🎫 Invite code</div>
+  <input value="dljso1685078">
 
   <div class="checkbox">
     <input type="checkbox">
-    I have read and agree <span>[Privacy Agreement]</span>
+    <div>I have read and agree <span>[Privacy Agreement]</span></div>
   </div>
 
   <button class="btn">Register</button>
 
-  <div class="login-link">
+  <div class="bottom">
     I have an account <span>Login</span>
   </div>
 </div>
 
-<div class="customer">💬</div>
+<div class="chat">💬</div>
 
 </body>
 </html>
