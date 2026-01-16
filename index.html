@@ -1,159 +1,155 @@
-</<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<title>BIGPRO Register</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BIGPRO Login</title>
+
 <style>
-*{box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;}
-body{margin:0;background:#f6f7fb;}
-
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#f6f7fb;
+}
 .header{
-background: linear-gradient(to right,#ff6b6b,#ff8a8a);
-color:white;
-padding:25px 20px;
+  background: linear-gradient(to right,#ff6b6b,#ff8a8a);
+  color:white;
+  padding:20px;
 }
-
-.header h2{margin:0;}
-.header p{margin:5px 0 0;font-size:14px;opacity:.9;}
-
-.tabs{
-display:flex;
-background:white;
+.header h1{
+  margin:0;
+  font-size:22px;
+  text-align:center;
 }
-
-.tab{
-flex:1;
-text-align:center;
-padding:12px;
-font-weight:bold;
-color:#888;
+.header p{
+  margin:8px 0 0;
+  font-size:14px;
 }
-
-.tab.active{
-color:#ff6b6b;
-border-bottom:3px solid #ff6b6b;
+.container{
+  padding:20px;
 }
-
-.form{
-padding:20px;
+.section-title{
+  text-align:center;
+  color:#ff6b6b;
+  font-weight:bold;
+  margin:15px 0;
 }
-
+.line{
+  height:2px;
+  background:#ff6b6b;
+  width:80%;
+  margin:0 auto 20px;
+}
 .label{
-margin-top:15px;
-font-weight:600;
-color:#444;
+  color:#555;
+  margin:10px 0 5px;
+  display:flex;
+  align-items:center;
+  gap:8px;
 }
-
 .input-box{
-display:flex;
-align-items:center;
-background:white;
-border-radius:12px;
-padding:12px;
-margin-top:8px;
-box-shadow:0 2px 6px rgba(0,0,0,.05);
+  display:flex;
+  gap:10px;
 }
-
-.input-box span{
-margin-right:8px;
-font-size:18px;
+input{
+  width:100%;
+  padding:14px;
+  border-radius:12px;
+  border:none;
+  background:white;
+  box-shadow:0 1px 5px rgba(0,0,0,0.05);
+  font-size:15px;
 }
-
-.input-box input{
-border:none;
-outline:none;
-width:100%;
-font-size:15px;
+.small{
+  width:70px;
+  text-align:center;
 }
-
 .checkbox{
-margin:15px 0;
-color:#666;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:15px 0;
+  color:#666;
+  font-size:14px;
 }
-
+.checkbox span{
+  color:#ff6b6b;
+}
 .btn{
-width:100%;
-padding:14px;
-border:none;
-border-radius:30px;
-font-size:18px;
-font-weight:bold;
-margin-top:10px;
+  background: linear-gradient(to right,#ff6b6b,#ff8a8a);
+  color:white;
+  border:none;
+  width:100%;
+  padding:15px;
+  border-radius:30px;
+  font-size:18px;
+  font-weight:bold;
 }
-
-.btn-main{
-background:#ff6b6b;
-color:white;
+.bottom{
+  text-align:center;
+  margin-top:10px;
+  color:#666;
 }
-
-.btn-outline{
-background:white;
-border:2px solid #ff6b6b;
-color:#ff6b6b;
+.bottom span{
+  color:#ff6b6b;
+  font-weight:bold;
 }
-
-.service{
-text-align:center;
-margin-top:20px;
-color:#ff6b6b;
-font-weight:600;
-}
-
 .chat{
-position:fixed;
-right:15px;
-bottom:15px;
-background:#ff6b6b;
-color:white;
-width:50px;
-height:50px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:22px;
+  position:fixed;
+  right:15px;
+  bottom:80px;
+  background:#ff6b6b;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-size:22px;
 }
 </style>
 </head>
 <body>
 
 <div class="header">
-  <h2>Log in</h2>
-  <p>Please log in with your phone number or email</p>
+  <h1>🏆 BIGPRO</h1>
+  <p>Please register by phone number or email</p>
 </div>
 
-<div class="tabs">
-  <div class="tab active">📱 Log in with phone</div>
-  <div class="tab">📧 Email Login</div>
-</div>
+<div class="container">
 
-<div class="form">
+  <div class="section-title">Register your phone</div>
+  <div class="line"></div>
 
   <div class="label">📱 Phone number</div>
   <div class="input-box">
-    <span>+91</span>
-    <input type="text" placeholder="Please enter the phone number">
+    <input class="small" value="+91">
+    <input placeholder="Please enter the phone number">
   </div>
 
-  <div class="label">🔒 Password</div>
-  <div class="input-box">
-    <span>🔑</span>
-    <input type="password" placeholder="Please enter Password">
-  </div>
+  <div class="label">🔒 Set password</div>
+  <input placeholder="Set password" type="password">
+
+  <div class="label">🔒 Confirm password</div>
+  <input placeholder="Confirm password" type="password">
+
+  <div class="label">🎫 Invite code</div>
+  <input value="invite code">
 
   <div class="checkbox">
-    <input type="checkbox"> Remember password
+    <input type="checkbox">
+    <div>I have read and agree <span>[Privacy Agreement]</span></div>
   </div>
 
-  <button class="btn btn-main">Log in</button>
-  <button class="btn btn-outline" onclick="location.href='index.html'">Register</button>
+  <button class="btn">Register</button>
 
-  <div class="service">🎧 Customer Service</div>
-
+  <div class="bottom">
+    I have an account <span>Login</span>
+  </div>
 </div>
 
 <div class="chat">💬</div>
 
 </body>
-</html>  
+</html>
