@@ -1,151 +1,140 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>My Dashboard</title>
-  <style>
-    body{
-      margin:0;
-      font-family:Arial,sans-serif;
-      background:white;
-    }
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial}
+body{background:#fff}
 
-    /* Top Logo Bar */
-    .top{
-      background:red;
-      color:white;
-      text-align:center;
-      padding:12px;
-      font-size:22px;
-      font-weight:bold;
-    }
+/* TOP BAR */
+.top{
+  background:red;
+  color:white;
+  text-align:center;
+  padding:12px;
+  font-size:22px;
+  font-weight:bold;
+}
 
-    /* Banner */
-    .banner{
-      margin:15px;
-      border:3px solid red;
-      height:120px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:28px;
-      font-weight:bold;
-    }
+/* BANNER */
+.banner{
+  margin:12px;
+  border:3px solid red;
+  height:120px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:30px;
+  font-weight:bold;
+}
 
-    /* Button Grid */
-    .row{
-      display:flex;
-      gap:10px;
-      margin:10px;
-    }
+/* BUTTON GRID */
+.row{display:flex;gap:10px;margin:10px}
+.btn{
+  background:red;
+  color:white;
+  flex:1;
+  padding:16px;
+  text-align:center;
+  font-size:16px;
+  font-weight:bold;
+  border-radius:6px;
+}
 
-    .btn{
-      flex:1;
-      background:red;
-      color:white;
-      text-align:center;
-      padding:15px 5px;
-      font-size:16px;
-      border-radius:5px;
-    }
+/* 3 COLUMN GRID */
+.grid3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin:10px;
+}
 
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:10px;
-      margin:10px;
-    }
+/* BIG TILT BUTTONS */
+.bigrow{
+  display:flex;
+  gap:10px;
+  margin:15px 10px;
+}
+.bigbtn{
+  flex:1;
+  background:red;
+  color:white;
+  height:140px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  font-weight:bold;
+  transform:skewY(-5deg);
+}
 
-    /* Big Buttons */
-    .bigrow{
-      display:flex;
-      gap:15px;
-      margin:15px;
-    }
-
-    .bigbtn{
-      flex:1;
-      background:red;
-      color:white;
-      height:160px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:22px;
-      transform:skew(-5deg);
-    }
-
-    /* Bottom Bar */
-    .bottom{
-      position:fixed;
-      bottom:0;
-      left:0;
-      right:0;
-      background:white;
-      display:flex;
-      justify-content:space-around;
-      padding:8px 0;
-      border-top:1px solid #ccc;
-    }
-
-    .bbtn{
-      background:red;
-      color:white;
-      padding:6px 10px;
-      font-size:12px;
-      border-radius:4px;
-    }
-
-    .invite{
-      background:red;
-      color:white;
-      width:55px;
-      height:55px;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:bold;
-      margin-top:-25px;
-    }
-  </style>
+/* BOTTOM BAR */
+.bottom{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:white;
+  display:flex;
+  justify-content:space-around;
+  padding:8px 0;
+  border-top:1px solid #ccc;
+}
+.bbtn{
+  background:red;
+  color:white;
+  padding:10px 14px;
+  font-size:12px;
+}
+.invite{
+  background:red;
+  color:white;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:-20px;
+  font-weight:bold;
+}
+</style>
 </head>
 <body>
 
-  <div class="top">MY LOGO</div>
+<div class="top">MY LOGO</div>
 
-  <div class="banner">BANNER</div>
+<div class="banner">BANNER</div>
 
-  <!-- 2 Buttons -->
-  <div class="row">
-    <div class="btn">Game Button</div>
-    <div class="btn">Game Button</div>
-  </div>
+<div class="row">
+  <div class="btn">Game Button</div>
+  <div class="btn">Game Button</div>
+</div>
 
-  <!-- 6 Buttons -->
-  <div class="grid">
-    <div class="btn">Game Button</div>
-    <div class="btn">Game Button</div>
-    <div class="btn">Game Button</div>
-    <div class="btn">Game Button</div>
-    <div class="btn">Game Button</div>
-    <div class="btn">Game Button</div>
-  </div>
+<div class="grid3">
+  <div class="btn">Game Button</div>
+  <div class="btn">Game Button</div>
+  <div class="btn">Game Button</div>
+  <div class="btn">Game Button</div>
+  <div class="btn">Game Button</div>
+  <div class="btn">Game Button</div>
+</div>
 
-  <!-- Big Slanted Buttons -->
-  <div class="bigrow">
-    <div class="bigbtn">Game Button</div>
-    <div class="bigbtn">Game Button</div>
-  </div>
+<div class="bigrow">
+  <div class="bigbtn">Game Button</div>
+  <div class="bigbtn">Game Button</div>
+</div>
 
-  <!-- Bottom Bar -->
-  <div class="bottom">
-    <div class="bbtn">Btn</div>
-    <div class="bbtn">Btn</div>
-    <div class="invite">Invite</div>
-    <div class="bbtn">Btn</div>
-    <div class="bbtn">Account</div>
-  </div>
+<div style="height:100px"></div>
+
+<div class="bottom">
+  <div class="bbtn">Btn</div>
+  <div class="bbtn">Btn</div>
+  <div class="invite">Invite</div>
+  <div class="bbtn">Btn</div>
+  <div class="bbtn">Account</div>
+</div>
 
 </body>
 </html>
