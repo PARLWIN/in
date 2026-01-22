@@ -6,102 +6,73 @@
 <title>Dashboard</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: Arial, sans-serif;
-}
-
-body{
-  background:#fff;
-  padding-bottom:90px;
-}
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif;}
+body{background:#fff;padding-bottom:90px}
 
 /* TOP BAR */
 .top{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
   background:red;
-  color:white;
+  color:#fff;
   text-align:center;
   padding:14px;
   font-size:20px;
   font-weight:bold;
-  z-index:1000;
-}
-
-.main{
-  padding-top:70px;
 }
 
 /* BANNER */
 .banner{
   margin:12px;
-  border:3px solid red;
   height:120px;
+  border:3px solid red;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:26px;
+  font-size:28px;
   font-weight:bold;
 }
 
 /* GAME GRID */
-.grid2{
+.games{
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:repeat(2,1fr);
   gap:10px;
-  padding:12px;
+  padding:10px;
 }
-
-.grid3{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-  padding:0 12px;
-}
-
-.card{
-  background:#e85c5c;
+.game{
+  background:#e85b5b;
   border-radius:14px;
   padding:10px;
   display:flex;
   align-items:center;
   gap:10px;
-  color:white;
+  color:#fff;
   font-weight:bold;
-  font-size:14px;
-  text-decoration:none;
+  cursor:pointer;
 }
-
-.card img{
-  width:46px;
-  height:46px;
+.game img{
+  width:55px;
+  height:55px;
   object-fit:contain;
 }
 
 /* BIG BUTTONS */
-.bigrow{
+.big{
   display:flex;
-  gap:12px;
-  padding:14px 12px;
+  gap:10px;
+  padding:10px;
 }
-
-.bigbtn{
+.big div{
   flex:1;
   background:red;
-  color:white;
-  height:110px;
+  color:#fff;
+  height:120px;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:18px;
+  font-size:22px;
   font-weight:bold;
   border-radius:12px;
-  text-decoration:none;
+  cursor:pointer;
 }
 
 /* BOTTOM BAR */
@@ -111,40 +82,29 @@ body{
   left:0;
   width:100%;
   background:#fff;
-  border-top:1px solid #ddd;
+  border-top:1px solid #ccc;
   display:flex;
   justify-content:space-around;
   align-items:center;
-  padding:8px 0;
+  height:70px;
 }
-
-.bottom a{
-  text-decoration:none;
-  color:#666;
-  font-size:12px;
+.bottom div{
   text-align:center;
+  font-size:12px;
 }
-
 .bottom img{
-  width:24px;
-  display:block;
-  margin:auto;
+  width:26px;
 }
-
 .invite{
   background:red;
-  width:56px;
-  height:56px;
+  width:60px;
+  height:60px;
   border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
-  margin-top:-28px;
 }
-
-.invite img{
-  width:28px;
-}
+.invite img{width:30px}
 </style>
 </head>
 
@@ -152,52 +112,72 @@ body{
 
 <div class="top">MY LOGO</div>
 
-<div class="main">
+<div class="banner">BANNER</div>
 
-  <div class="banner">BANNER</div>
+<!-- GAME BUTTONS -->
+<div class="games">
 
-  <!-- LOTTERY + SLOTS -->
-  <div class="grid2">
-    <a class="card" href="#">
-      <img src="Image/Lottery.png">
-      LOTTERY
-    </a>
-
-    <a class="card" href="#">
-      <img src="Image/Slots.png">
-      SLOTS
-    </a>
+  <div class="game" onclick="alert('Lottery')">
+    <img src="Image/Lottery.png"> LOTTERY
   </div>
 
-  <!-- 6 GAME BUTTONS -->
-  <div class="grid3">
-    <a class="card" href="#"><img src="Image/Fishing.png">FISHING</a>
-    <a class="card" href="#"><img src="Image/Rummy.png">RUMMY</a>
-    <a class="card" href="#"><img src="Image/Casino.png">CASINO</a>
-    <a class="card" href="#"><img src="Image/Popular.png">POPULAR</a>
-    <a class="card" href="#"><img src="Image/Original.png">ORIGINAL</a>
-    <a class="card" href="#"><img src="Image/Sports.png">SPORTS</a>
+  <div class="game" onclick="alert('Slots')">
+    <img src="Image/Slots.png"> SLOTS
   </div>
 
-  <!-- BIG BUTTONS -->
-  <div class="bigrow">
-    <a class="bigbtn" href="#">Game Button</a>
-    <a class="bigbtn" href="#">Game Button</a>
+  <div class="game" onclick="alert('Fishing')">
+    <img src="Image/Fishing.png"> FISHING
+  </div>
+
+  <div class="game" onclick="alert('Rummy')">
+    <img src="Image/Rummy.png"> RUMMY
+  </div>
+
+  <div class="game" onclick="alert('Casino')">
+    <img src="Image/Casino.png"> CASINO
+  </div>
+
+  <div class="game" onclick="alert('Popular')">
+    <img src="Image/Popular.png"> POPULAR
+  </div>
+
+  <div class="game" onclick="alert('Original')">
+    <img src="Image/Original.png"> ORIGINAL
+  </div>
+
+  <div class="game" onclick="alert('Sports')">
+    <img src="Image/Sports.png"> SPORTS
   </div>
 
 </div>
 
+<!-- BIG GAME BUTTONS -->
+<div class="big">
+  <div onclick="alert('Game 1')">Game Button</div>
+  <div onclick="alert('Game 2')">Game Button</div>
+</div>
+
 <!-- BOTTOM NAV -->
 <div class="bottom">
-  <a href="#"><img src="Image/Home.png">Home</a>
-  <a href="#"><img src="Image/Activity.png">Activity</a>
+  <div onclick="alert('Home')">
+    <img src="Image/Home.png"><br>Home
+  </div>
 
-  <div class="invite">
+  <div onclick="alert('Activity')">
+    <img src="Image/Activity.png"><br>Activity
+  </div>
+
+  <div class="invite" onclick="alert('Invite')">
     <img src="Image/Invite.png">
   </div>
 
-  <a href="#"><img src="Image/Wallet.png">Wallet</a>
-  <a href="#"><img src="Image/Account.png">Account</a>
+  <div onclick="alert('Wallet')">
+    <img src="Image/Wallet.png"><br>Wallet
+  </div>
+
+  <div onclick="alert('Account')">
+    <img src="Image/Account.png"><br>Account
+  </div>
 </div>
 
 </body>
