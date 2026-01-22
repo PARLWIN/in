@@ -10,11 +10,11 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 body{
-  background:#ffffff;
+  background:#fff;
   padding-bottom:90px;
 }
 
@@ -24,16 +24,15 @@ body{
   top:0;
   left:0;
   width:100%;
-  background:#ff0000;
-  color:#fff;
+  background:red;
+  color:white;
   text-align:center;
-  padding:14px 0;
+  padding:14px;
   font-size:20px;
   font-weight:bold;
   z-index:1000;
 }
 
-/* MAIN */
 .main{
   padding-top:70px;
 }
@@ -46,37 +45,18 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:28px;
+  font-size:26px;
   font-weight:bold;
 }
 
 /* GAME GRID */
-.grid{
+.grid2{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
+  grid-template-columns:1fr 1fr;
   gap:10px;
   padding:12px;
 }
 
-.card{
-  background:#e65c5c;
-  border-radius:14px;
-  padding:10px;
-  display:flex;
-  align-items:center;
-  gap:10px;
-  color:#fff;
-  font-weight:bold;
-  font-size:16px;
-}
-
-.card img{
-  width:55px;
-  height:55px;
-  object-fit:contain;
-}
-
-/* 3 COLUMN GRID */
 .grid3{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -84,24 +64,44 @@ body{
   padding:0 12px;
 }
 
+.card{
+  background:#e85c5c;
+  border-radius:14px;
+  padding:10px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:white;
+  font-weight:bold;
+  font-size:14px;
+  text-decoration:none;
+}
+
+.card img{
+  width:46px;
+  height:46px;
+  object-fit:contain;
+}
+
 /* BIG BUTTONS */
 .bigrow{
   display:flex;
-  gap:10px;
+  gap:12px;
   padding:14px 12px;
 }
 
 .bigbtn{
   flex:1;
   background:red;
-  color:#fff;
-  height:120px;
+  color:white;
+  height:110px;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:20px;
+  font-size:18px;
   font-weight:bold;
-  transform:skew(-5deg);
+  border-radius:12px;
+  text-decoration:none;
 }
 
 /* BOTTOM BAR */
@@ -120,30 +120,30 @@ body{
 
 .bottom a{
   text-decoration:none;
-  color:#555;
+  color:#666;
   font-size:12px;
   text-align:center;
 }
 
 .bottom img{
-  width:26px;
+  width:24px;
   display:block;
   margin:auto;
 }
 
 .invite{
   background:red;
-  width:60px;
-  height:60px;
+  width:56px;
+  height:56px;
   border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
-  margin-top:-30px;
+  margin-top:-28px;
 }
 
 .invite img{
-  width:30px;
+  width:28px;
 }
 </style>
 </head>
@@ -156,8 +156,8 @@ body{
 
   <div class="banner">BANNER</div>
 
-  <!-- 2 BIG -->
-  <div class="grid">
+  <!-- LOTTERY + SLOTS -->
+  <div class="grid2">
     <a class="card" href="#">
       <img src="Image/Lottery.png">
       LOTTERY
@@ -169,7 +169,7 @@ body{
     </a>
   </div>
 
-  <!-- 3x2 -->
+  <!-- 6 GAME BUTTONS -->
   <div class="grid3">
     <a class="card" href="#"><img src="Image/Fishing.png">FISHING</a>
     <a class="card" href="#"><img src="Image/Rummy.png">RUMMY</a>
@@ -179,7 +179,7 @@ body{
     <a class="card" href="#"><img src="Image/Sports.png">SPORTS</a>
   </div>
 
-  <!-- BIG RED -->
+  <!-- BIG BUTTONS -->
   <div class="bigrow">
     <a class="bigbtn" href="#">Game Button</a>
     <a class="bigbtn" href="#">Game Button</a>
@@ -187,7 +187,7 @@ body{
 
 </div>
 
-<!-- BOTTOM -->
+<!-- BOTTOM NAV -->
 <div class="bottom">
   <a href="#"><img src="Image/Home.png">Home</a>
   <a href="#"><img src="Image/Activity.png">Activity</a>
