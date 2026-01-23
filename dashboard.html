@@ -58,8 +58,10 @@ body{
 .game-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:6px;              /* 🔥 white space कम */
-  padding:0 14px 14px;
+  column-gap:12px;   /* left-right same */
+  row-gap:6px;       /* 🔥 upar-niche space kam */
+  padding:14px;
+  }
 }
 .game-btn{
   background:transperent;
