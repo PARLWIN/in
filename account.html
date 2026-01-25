@@ -1,91 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Account</title>
+
+<style>
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
   font-family:Arial, Helvetica, sans-serif;
 }
-
 body{
   background:#f4f6fb;
   padding-bottom:90px;
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 .header{
   background:#ff0000;
   text-align:center;
   padding:14px 0;
 }
 .header img{
-  height:40px;
+  height:42px;
 }
 
-/* PROFILE CARD */
+/* ===== PROFILE ===== */
 .profile{
   background:linear-gradient(90deg,#ff6b6b,#ff8e8e);
   padding:18px;
   display:flex;
   align-items:center;
   gap:14px;
-  border-radius:0 0 22px 22px;
+  color:#fff;
 }
 .profile img{
-  width:64px;
-  height:64px;
+  width:70px;
+  height:70px;
   border-radius:50%;
   object-fit:cover;
-  border:2px solid #fff;
-}
-.profile .info{
-  color:#fff;
 }
 .profile .info h3{
   font-size:16px;
-  margin-bottom:4px;
+  font-weight:bold;
 }
 .profile .info p{
   font-size:13px;
   opacity:.9;
 }
 
-/* BALANCE */
+/* ===== BALANCE CARD ===== */
 .balance{
   background:#fff;
   margin:14px;
-  padding:16px;
   border-radius:16px;
-  box-shadow:0 4px 10px rgba(0,0,0,.06);
+  padding:16px;
 }
 .balance h4{
-  color:#777;
+  color:#666;
   font-size:14px;
 }
-.balance h2{
-  margin-top:6px;
+.balance .amount{
   font-size:26px;
+  font-weight:bold;
+  margin-top:6px;
 }
 
-/* ACTION ICONS */
-.actions{
+/* ===== QUICK ACTIONS ===== */
+.quick{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:12px;
+  gap:10px;
   margin:0 14px;
 }
-.action{
+.quick div{
   background:#fff;
   border-radius:14px;
-  padding:14px 6px;
+  padding:12px 5px;
   text-align:center;
   font-size:13px;
-  box-shadow:0 3px 8px rgba(0,0,0,.05);
 }
-.action img{
+.quick img{
   width:36px;
-  margin-bottom:8px;
+  height:36px;
+  margin-bottom:6px;
 }
 
-/* MENU */
+/* ===== MENU ===== */
 .menu{
   background:#fff;
   margin:14px;
@@ -95,19 +98,17 @@ body{
 .menu-item{
   display:flex;
   align-items:center;
-  gap:14px;
-  padding:15px;
+  padding:14px;
   border-bottom:1px solid #eee;
-  font-size:15px;
+  font-size:14px;
 }
-.menu-item:last-child{
-  border-bottom:none;
-}
+.menu-item:last-child{border-bottom:none;}
 .menu-item img{
-  width:28px;
+  width:26px;
+  margin-right:12px;
 }
 
-/* BOTTOM NAV */
+/* ===== BOTTOM NAV ===== */
 .bottom-nav{
   position:fixed;
   bottom:0;
@@ -124,24 +125,74 @@ body{
   text-align:center;
   font-size:12px;
   color:#999;
+  text-decoration:none;
 }
 .nav-item img{
-  width:40px;
+  width:28px;
+  height:28px;
 }
 .nav-item.active{
   color:red;
   font-weight:bold;
 }
 .nav-item.active img{
-  filter: brightness(0) saturate(100%) invert(24%) sepia(96%) saturate(7494%) hue-rotate(356deg) brightness(95%) contrast(118%);
+  filter: brightness(0) saturate(100%) invert(21%) sepia(93%) saturate(6000%) hue-rotate(355deg);
 }
 
-/* INVITE */
+/* CENTER BUTTON */
 .invite{
-  width:64px;
-  height:64px;
   margin-top:-30px;
 }
 .invite img{
-  width:72px;
+  width:64px;
 }
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <img src="Image/Mylogo.png">
+</div>
+
+<!-- PROFILE -->
+<div class="profile">
+  <img src="Image/profile.jpg" onerror="this.src='Image/Account.png'">
+  <div class="info">
+    <h3>MEMBERNNG4RTR8</h3>
+    <p>UID : 18187762</p>
+    <p>Last login : 2026-01-24 17:03</p>
+  </div>
+</div>
+
+<!-- BALANCE -->
+<div class="balance">
+  <h4>Total balance</h4>
+  <div class="amount">₹ 58.00</div>
+</div>
+
+<!-- QUICK ACTIONS -->
+<div class="quick">
+  <div><img src="Image/Wallet.png"><br>ARWallet</div>
+  <div><img src="Image/Deposit.png"><br>Deposit</div>
+  <div><img src="Image/Withdraw.png"><br>Withdraw</div>
+  <div><img src="Image/VIP.png"><br>VIP</div>
+</div>
+
+<!-- MENU -->
+<div class="menu">
+  <div class="menu-item"><img src="Image/Activity.png">Game History</div>
+  <div class="menu-item"><img src="Image/Wallet.png">Transaction History</div>
+  <div class="menu-item"><img src="Image/Deposit.png">Deposit History</div>
+  <div class="menu-item"><img src="Image/Withdraw.png">Withdraw History</div>
+  <div class="menu-item"><img src="Image/Notification.png">Notification</div>
+  <div class="menu-item"><img src="Image/Gift.png">Gifts</div>
+  <div class="menu-item"><img src="Image/Language.png">Language</div>
+</div>
+
+<!-- BOTTOM NAV -->
+<div class="bottom-nav">
+  <a href="index.html" class="nav-item">
+    <img src="Image/Home.png"><br>Home
+  </a
