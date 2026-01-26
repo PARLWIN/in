@@ -12,6 +12,7 @@
   box-sizing:border-box;
   font-family:Arial, Helvetica, sans-serif;
 }
+
 body{
   background:#f6f7fb;
   padding-bottom:90px;
@@ -25,42 +26,35 @@ body{
   align-items:center;
   justify-content:center;
   position:relative;
-  font-weight:bold;
   font-size:18px;
+  font-weight:bold;
 }
 .header a{
   position:absolute;
   left:14px;
   text-decoration:none;
-  color:#333;
   font-size:22px;
+  color:#333;
 }
 
-/* TOP CARD */
+/* TOP */
 .top{
   background:linear-gradient(180deg,#ff7a7a,#ff9a8b);
   color:#fff;
   padding:20px 14px 26px;
   text-align:center;
 }
-.top .big{
-  font-size:28px;
-  font-weight:bold;
-}
+.top .big{font-size:28px;font-weight:bold;}
 .top .sub{
   margin-top:6px;
   background:#fff;
   color:#ff6a6a;
-  display:inline-block;
   padding:6px 12px;
   border-radius:20px;
   font-size:13px;
+  display:inline-block;
 }
-.top p{
-  margin-top:8px;
-  font-size:12px;
-  opacity:.9;
-}
+.top p{font-size:12px;margin-top:8px;opacity:.9}
 
 /* STATS */
 .stats{
@@ -69,28 +63,17 @@ body{
   border-radius:16px;
   display:grid;
   grid-template-columns:1fr 1fr;
-  overflow:hidden;
 }
 .stats .box{
   padding:14px;
   border-right:1px solid #eee;
 }
 .stats .box:last-child{border-right:none;}
-.stats h4{
-  font-size:14px;
-  margin-bottom:8px;
-  color:#ff6a6a;
-}
-.stats p{
-  font-size:12px;
-  margin:6px 0;
-  color:#555;
-}
+.stats h4{font-size:14px;color:#ff6a6a;margin-bottom:8px;}
+.stats p{font-size:12px;color:#555;margin:6px 0}
 
-/* QR BUTTON */
-.qr-btn{
-  margin:14px;
-}
+/* INVITE BUTTON */
+.qr-btn{margin:14px;}
 .qr-btn button{
   width:100%;
   height:46px;
@@ -102,9 +85,7 @@ body{
 }
 
 /* LIST */
-.list{
-  margin:14px;
-}
+.list{margin:14px;}
 .item{
   background:#fff;
   border-radius:14px;
@@ -114,60 +95,38 @@ body{
   justify-content:space-between;
   margin-bottom:12px;
 }
-.item .left{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
+.left{display:flex;align-items:center;gap:10px;}
 .icon{
-  width:36px;
-  height:36px;
-  border-radius:50%;
+  width:36px;height:36px;border-radius:50%;
   background:#ffe3e3;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  display:flex;align-items:center;justify-content:center;
 }
-.icon img{
-  width:20px;
-}
-.item span{
-  font-size:14px;
-}
-.code{
-  color:#999;
-  font-size:13px;
-}
+.icon img{width:20px;}
+.code{color:#999;font-size:13px}
 
-/* PROMOTION DATA */
+/* PROMO */
 .promo{
   background:#fff;
   margin:14px;
   border-radius:14px;
   padding:14px;
 }
-.promo h4{
-  font-size:14px;
-  margin-bottom:10px;
-}
+.promo h4{margin-bottom:10px;font-size:14px;}
 .promo-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:10px;
-  text-align:center;
 }
 .promo-grid div{
   background:#f6f7fb;
   border-radius:10px;
-  padding:12px 6px;
+  padding:12px;
+  text-align:center;
 }
-.promo-grid strong{
-  display:block;
-  font-size:16px;
-}
+.promo-grid strong{display:block;font-size:16px}
 
 /* BOTTOM NAV */
-bottom-nav{
+.bottom-nav{
   position:fixed;
   bottom:0;
   left:0;
@@ -192,24 +151,28 @@ bottom-nav{
   display:block;
   margin:0 auto;
 }
-.nav-item.active{color:red;}
 
-.invite{
-  width:64px;
-  height:64px;
-  margin-top:-32px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+/* ACTIVE RED */
+.nav-item.active{
+  color:red;
 }
-.invite img{
+.nav-item.active img{
+  filter: brightness(0) saturate(100%) invert(18%) sepia(96%)
+          saturate(7450%) hue-rotate(356deg) brightness(95%) contrast(120%);
+}
+
+/* INVITE CENTER */
+.invite-btn{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  top:-32px;
+  z-index:1000;
+}
+.invite-btn img{
   width:72px;
   height:72px;
 }
-.nav-item.active img{
- filter: brightness(0) saturate(100%) invert(18%) sepia(96%) 
-        saturate(7450%) hue-rotate(356deg) brightness(95%) contrast(120%);
-  }
 </style>
 </head>
 
@@ -246,55 +209,20 @@ bottom-nav{
   </div>
 </div>
 
-<!-- QR -->
 <div class="qr-btn">
   <button>INVITE</button>
 </div>
 
 <!-- LIST -->
 <div class="list">
-  <div class="item">
-    <div class="left">
-      <div class="icon"><img src="Image/reward.png"></div>
-      <span>Partner rewards</span>
-    </div>
-    ➤
-  </div>
-
-  <div class="item">
-    <div class="left">
-      <div class="icon"><img src="Image/copy.png"></div>
-      <span>Copy invitation code</span>
-    </div>
-    <span class="code">6577818187762</span>
-  </div>
-
-  <div class="item">
-    <div class="left">
-      <div class="icon"><img src="Image/data.png"></div>
-      <span>Subordinate data</span>
-    </div>
-    ➤
-  </div>
-
-  <div class="item">
-    <div class="left">
-      <div class="icon"><img src="Image/commission.png"></div>
-      <span>Commission detail</span>
-    </div>
-    ➤
-  </div>
-
-  <div class="item">
-    <div class="left">
-      <div class="icon"><img src="Image/rules.png"></div>
-      <span>Invitation rules</span>
-    </div>
-    ➤
-  </div>
+  <div class="item"><div class="left"><div class="icon"></div>Partner rewards</div>➤</div>
+  <div class="item"><div class="left"><div class="icon"></div>Copy invitation code</div><span class="code">6577818187762</span></div>
+  <div class="item"><div class="left"><div class="icon"></div>Subordinate data</div>➤</div>
+  <div class="item"><div class="left"><div class="icon"></div>Commission detail</div>➤</div>
+  <div class="item"><div class="left"><div class="icon"></div>Invitation rules</div>➤</div>
 </div>
 
-<!-- PROMOTION -->
+<!-- PROMO -->
 <div class="promo">
   <h4>Promotion data</h4>
   <div class="promo-grid">
@@ -308,23 +236,25 @@ bottom-nav{
 <!-- BOTTOM NAV -->
 <div class="bottom-nav">
   <a href="dashboard.html" class="nav-item">
-    <img src="Image/Home.png">
+    <img src="Image/Home.png">Home
   </a>
 
   <a href="activity.html" class="nav-item">
-    <img src="Image/Activity.png">
+    <img src="Image/Activity.png">Activity
   </a>
 
-  <!-- invite OUTSIDE flex flow -->
   <a href="invite.html" class="invite-btn">
     <img src="Image/Invite.png">
   </a>
 
   <a href="wallet.html" class="nav-item">
-    <img src="Image/Wallet.png">
+    <img src="Image/Wallet.png">Wallet
   </a>
 
-  <a href="account.html" class="nav-item">
-    <img src="Image/Account.png">
+  <a href="account.html" class="nav-item active">
+    <img src="Image/Account.png">Account
   </a>
-                          </div>
+</div>
+
+</body>
+  </html>
