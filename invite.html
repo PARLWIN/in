@@ -13,31 +13,97 @@
   font-family:Arial, Helvetica, sans-serif;
 }
 body{
-  background:#f5f6fb;
+  background:#f6f7fb;
   padding-bottom:90px;
 }
 
 /* HEADER */
 .header{
   height:56px;
+  background:#fff;
   display:flex;
   align-items:center;
   justify-content:center;
-  background:#fff;
-  border-bottom:1px solid #eee;
-  font-size:18px;
-  font-weight:bold;
   position:relative;
+  font-weight:bold;
+  font-size:18px;
 }
-.header .icon{
+.header a{
   position:absolute;
-  right:14px;
-  width:22px;
+  left:14px;
+  text-decoration:none;
+  color:#333;
+  font-size:22px;
+}
+
+/* TOP CARD */
+.top{
+  background:linear-gradient(180deg,#ff7a7a,#ff9a8b);
+  color:#fff;
+  padding:20px 14px 26px;
+  text-align:center;
+}
+.top .big{
+  font-size:28px;
+  font-weight:bold;
+}
+.top .sub{
+  margin-top:6px;
+  background:#fff;
+  color:#ff6a6a;
+  display:inline-block;
+  padding:6px 12px;
+  border-radius:20px;
+  font-size:13px;
+}
+.top p{
+  margin-top:8px;
+  font-size:12px;
+  opacity:.9;
+}
+
+/* STATS */
+.stats{
+  background:#fff;
+  margin:-18px 14px 14px;
+  border-radius:16px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  overflow:hidden;
+}
+.stats .box{
+  padding:14px;
+  border-right:1px solid #eee;
+}
+.stats .box:last-child{border-right:none;}
+.stats h4{
+  font-size:14px;
+  margin-bottom:8px;
+  color:#ff6a6a;
+}
+.stats p{
+  font-size:12px;
+  margin:6px 0;
+  color:#555;
+}
+
+/* QR BUTTON */
+.qr-btn{
+  margin:14px;
+}
+.qr-btn button{
+  width:100%;
+  height:46px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(90deg,#ff7a7a,#ff9a8b);
+  color:#fff;
+  font-size:16px;
 }
 
 /* LIST */
 .list{
-  padding:14px;
+  margin:14px;
 }
 .item{
   background:#fff;
@@ -48,64 +114,56 @@ body{
   justify-content:space-between;
   margin-bottom:12px;
 }
-.item-left{
+.item .left{
   display:flex;
   align-items:center;
   gap:10px;
-  font-size:14px;
 }
-.item-left img{
-  width:28px;
-}
-.arrow{
-  font-size:20px;
-  color:#999;
-}
-
-/* COPY */
-.copy{
+.icon{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  background:#ffe3e3;
   display:flex;
   align-items:center;
-  gap:10px;
-  color:#666;
-  font-size:14px;
+  justify-content:center;
 }
-.copy span{
-  color:#000;
-}
-.copy img{
+.icon img{
   width:20px;
+}
+.item span{
+  font-size:14px;
+}
+.code{
+  color:#999;
+  font-size:13px;
 }
 
 /* PROMOTION DATA */
 .promo{
   background:#fff;
-  border-radius:16px;
-  padding:16px;
   margin:14px;
+  border-radius:14px;
+  padding:14px;
 }
-.promo-title{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  font-weight:bold;
-  margin-bottom:14px;
-}
-.promo-title img{
-  width:22px;
+.promo h4{
+  font-size:14px;
+  margin-bottom:10px;
 }
 .promo-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:16px;
+  gap:10px;
   text-align:center;
 }
-.promo-box h3{
-  font-size:18px;
+.promo-grid div{
+  background:#f6f7fb;
+  border-radius:10px;
+  padding:12px 6px;
 }
-.promo-box p{
-  font-size:12px;
-  color:#777;
+.promo-grid strong{
+  display:block;
+  font-size:16px;
 }
 
 /* BOTTOM NAV */
@@ -125,42 +183,21 @@ body{
   text-align:center;
   font-size:12px;
   color:#999;
+  text-decoration:none;
 }
 .nav-item img{
-  width:45px;
+  width:32px;
+  display:block;
+  margin:0 auto 4px;
 }
-.nav-item.active{
-  color:red;
-}
-
-/* INVITE CENTER */
-.invite{
-  width:64px;
-}
- .bottom-nav{
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 75px;
-  background: #fff;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  z-index: 10;
-  pointer-events:none;
+.nav-item.active{color:red;}
 
 .invite{
-  position: relative;
-  z-index: 9999;
-  pointer-events: auto;
-  margin-top: -32px;
+  margin-top:-32px;
 }
-
 .invite img{
-  width: 72px;
-  height: 72px;
-  display: block;
+  width:72px;
+  height:72px;
 }
 </style>
 </head>
@@ -169,123 +206,116 @@ body{
 
 <!-- HEADER -->
 <div class="header">
+  <a href="index.html">←</a>
   Agency
-  <img src="Image/Notification.png" class="icon">
+</div>
+
+<!-- TOP -->
+<div class="top">
+  <div class="big">0</div>
+  <div class="sub">Yesterday's total commission</div>
+  <p>Upgrade the level to increase commission income</p>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="box">
+    <h4>Direct subordinates</h4>
+    <p>0 number of register</p>
+    <p>0 Deposit number</p>
+    <p>0 Deposit amount</p>
+    <p>0 First deposit</p>
+  </div>
+  <div class="box">
+    <h4>Team subordinates</h4>
+    <p>0 number of register</p>
+    <p>0 Deposit number</p>
+    <p>0 Deposit amount</p>
+    <p>0 First deposit</p>
+  </div>
+</div>
+
+<!-- QR -->
+<div class="qr-btn">
+  <button>INVITE</button>
 </div>
 
 <!-- LIST -->
 <div class="list">
-
   <div class="item">
-    <div class="item-left">
-      <img src="Image/Partner.png">
-      Partner rewards
+    <div class="left">
+      <div class="icon"><img src="Image/reward.png"></div>
+      <span>Partner rewards</span>
     </div>
-    <div class="arrow">›</div>
+    ➤
   </div>
 
   <div class="item">
-    <div class="item-left">
-      <img src="Image/Copy.png">
-      Copy invitation code
+    <div class="left">
+      <div class="icon"><img src="Image/copy.png"></div>
+      <span>Copy invitation code</span>
     </div>
-    <div class="copy">
-      <span>0000000000000</span>
-      <img src="Image/Copy.icon.png">
-    </div>
+    <span class="code">6577818187762</span>
   </div>
 
   <div class="item">
-    <div class="item-left">
-      <img src="Image/Subordinate.png">
-      Subordinate data
+    <div class="left">
+      <div class="icon"><img src="Image/data.png"></div>
+      <span>Subordinate data</span>
     </div>
-    <div class="arrow">›</div>
+    ➤
   </div>
 
   <div class="item">
-    <div class="item-left">
-      <img src="Image/Commission.png">
-      Commission detail
+    <div class="left">
+      <div class="icon"><img src="Image/commission.png"></div>
+      <span>Commission detail</span>
     </div>
-    <div class="arrow">›</div>
+    ➤
   </div>
 
   <div class="item">
-    <div class="item-left">
-      <img src="Image/Rules.png">
-      Invitation rules
+    <div class="left">
+      <div class="icon"><img src="Image/rules.png"></div>
+      <span>Invitation rules</span>
     </div>
-    <div class="arrow">›</div>
+    ➤
   </div>
-
-  <div class="item">
-    <div class="item-left">
-      <img src="Image/Support.png">
-      Agent line customer service
-    </div>
-    <div class="arrow">›</div>
-  </div>
-
-  <div class="item">
-    <div class="item-left">
-      <img src="Image/Rebate.png">
-      Rebate ratio
-    </div>
-    <div class="arrow">›</div>
-  </div>
-
 </div>
 
-<!-- PROMOTION DATA -->
+<!-- PROMOTION -->
 <div class="promo">
-  <div class="promo-title">
-    <img src="Image/Promotion.png">
-    promotion data
-  </div>
-
+  <h4>Promotion data</h4>
   <div class="promo-grid">
-    <div class="promo-box">
-      <h3>0</h3>
-      <p>This Week</p>
-    </div>
-    <div class="promo-box">
-      <h3>0</h3>
-      <p>Total commission</p>
-    </div>
-    <div class="promo-box">
-      <h3>0</h3>
-      <p>direct subordinate</p>
-    </div>
-    <div class="promo-box">
-      <h3>0</h3>
-      <p>Total number of subordinates in the team</p>
-    </div>
+    <div><strong>0</strong>This Week</div>
+    <div><strong>0</strong>Total commission</div>
+    <div><strong>0</strong>Direct subordinate</div>
+    <div><strong>0</strong>Total team</div>
   </div>
 </div>
 
 <!-- BOTTOM NAV -->
 <div class="bottom-nav">
-  <a href="dashboard.html" class="nav-item">
-    <img src="Image/Home.png"><div>Home</div>
+  <a href="index.html" class="nav-item">
+    <img src="Image/Home.png">
   </a>
 
   <a href="activity.html" class="nav-item">
-    <img src="Image/Activity.png"><div>Activity</div>
+    <img src="Image/Activity.png">
   </a>
 
   <a href="invite.html" class="invite">
-  <img src="Image/Invite.png">
+    <img src="Image/Invite.png">
   </a>
 
   <a href="wallet.html" class="nav-item">
-    <img src="Image/Wallet.png"><div>Wallet</div>
+    <img src="Image/Wallet.png">
   </a>
 
   <a href="account.html" class="nav-item">
-    <img src="Image/Account.png"><div>Account</div>
+    <img src="Image/Account.png">
   </a>
 </div>
 
 </body>
-</html>
+                             </html>
