@@ -15,7 +15,7 @@
 
 body{
   background:#f6f7fb;
-  padding-bottom:150px; /* ✅ FIX */
+  padding-bottom:130px; /* IMPORTANT */
 }
 
 /* HEADER */
@@ -72,7 +72,7 @@ body{
 .stats h4{font-size:14px;color:#ff6a6a;margin-bottom:8px;}
 .stats p{font-size:12px;color:#555;margin:6px 0}
 
-/* INVITE BUTTON */
+/* INVITE MAIN */
 .invite-main{margin:14px;}
 .invite-main button{
   width:100%;
@@ -95,13 +95,7 @@ body{
   justify-content:space-between;
   margin-bottom:12px;
 }
-.left{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-
-/* ✅ ICON FIX */
+.left{display:flex;align-items:center;gap:10px;}
 .icon{
   width:36px;
   height:36px;
@@ -111,11 +105,7 @@ body{
   align-items:center;
   justify-content:center;
 }
-.icon img{
-  width:20px;
-  height:20px;
-}
-
+.icon img{width:20px;}
 .code{font-size:13px;color:#999}
 
 /* PROMO */
@@ -125,7 +115,7 @@ body{
   border-radius:14px;
   padding:14px;
 }
-.promo h4{font-size:14px;margin-bottom:10px;}
+.promo h4{margin-bottom:10px;font-size:14px;}
 .promo-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -151,8 +141,7 @@ body{
   display:flex;
   justify-content:space-around;
   align-items:center;
-  z-index:999;
-  position:relative;
+  z-index:9999;
 }
 
 .nav-item{
@@ -168,20 +157,19 @@ body{
   margin:0 auto;
 }
 
-/* ACTIVE */
 .nav-item.active{color:red;}
 .nav-item.active img{
   filter: brightness(0) saturate(100%) invert(18%) sepia(96%)
           saturate(7450%) hue-rotate(356deg) brightness(95%) contrast(120%);
 }
 
-/* CENTER INVITE */
+/* INVITE FIXED CENTER */
 .invite-btn{
-  position:absolute;
+  position:fixed;
+  bottom:38px;            /* 🔥 KEY FIX */
   left:50%;
   transform:translateX(-50%);
-  top:-32px;
-  z-index:1000;
+  z-index:10000;
 }
 .invite-btn img{
   width:72px;
@@ -192,17 +180,20 @@ body{
 
 <body>
 
+<!-- HEADER -->
 <div class="header">
   <a href="index.html">←</a>
   Agency
 </div>
 
+<!-- TOP -->
 <div class="top">
   <div class="big">0</div>
   <div class="sub">Yesterday's total commission</div>
   <p>Upgrade the level to increase commission income</p>
 </div>
 
+<!-- STATS -->
 <div class="stats">
   <div class="box">
     <h4>Direct subordinates</h4>
@@ -224,12 +215,13 @@ body{
   <button>INVITE</button>
 </div>
 
+<!-- LIST -->
 <div class="list">
   <div class="item">
     <div class="left">
       <div class="icon"><img src="Image/reward.png"></div>
       Partner rewards
-    </div> ➤
+    </div>➤
   </div>
 
   <div class="item">
@@ -244,24 +236,25 @@ body{
     <div class="left">
       <div class="icon"><img src="Image/data.png"></div>
       Subordinate data
-    </div> ➤
+    </div>➤
   </div>
 
   <div class="item">
     <div class="left">
       <div class="icon"><img src="Image/commission.png"></div>
       Commission detail
-    </div> ➤
+    </div>➤
   </div>
 
   <div class="item">
     <div class="left">
       <div class="icon"><img src="Image/rules.png"></div>
       Invitation rules
-    </div> ➤
+    </div>➤
   </div>
 </div>
 
+<!-- PROMO -->
 <div class="promo">
   <h4>Promotion data</h4>
   <div class="promo-grid">
@@ -272,6 +265,7 @@ body{
   </div>
 </div>
 
+<!-- BOTTOM NAV -->
 <div class="bottom-nav">
   <a href="index.html" class="nav-item">
     <img src="Image/Home.png">Home
@@ -279,10 +273,6 @@ body{
 
   <a href="activity.html" class="nav-item">
     <img src="Image/Activity.png">Activity
-  </a>
-
-  <a href="invite.html" class="invite-btn">
-    <img src="Image/Invite.png">
   </a>
 
   <a href="wallet.html" class="nav-item">
@@ -293,6 +283,11 @@ body{
     <img src="Image/Account.png">Account
   </a>
 </div>
+
+<!-- INVITE FLOAT BUTTON -->
+<a href="invite.html" class="invite-btn">
+  <img src="Image/Invite.png">
+</a>
 
 </body>
 </html>
