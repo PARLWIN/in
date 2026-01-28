@@ -15,10 +15,10 @@
 
 body{
   background:#f6f7fb;
-  padding-bottom:140px; /* bottom nav + invite space */
+  padding-bottom:120px;
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 .header{
   height:56px;
   background:#fff;
@@ -32,23 +32,89 @@ body{
 .header a{
   position:absolute;
   left:14px;
-  font-size:22px;
   text-decoration:none;
+  font-size:22px;
   color:#333;
 }
 
-/* ===== PAGE CONTENT (demo) ===== */
-.content{
-  padding:16px;
+/* TOP BANNER */
+.top{
+  background:linear-gradient(180deg,#ff7a7a,#ff9a8b);
+  color:#fff;
+  padding:20px;
+  text-align:center;
 }
-.card{
+.top h2{
+  font-size:22px;
+  margin-bottom:10px;
+}
+.bonus-row{
+  display:flex;
+  justify-content:space-around;
+  margin:10px 0;
+}
+.bonus-box p{
+  font-size:13px;
+}
+.bonus-box strong{
+  display:block;
+  font-size:18px;
+  margin-top:4px;
+}
+.bonus-btn{
+  margin-top:12px;
   background:#fff;
-  border-radius:16px;
-  padding:16px;
-  margin-bottom:14px;
+  color:#ff6a6a;
+  border:none;
+  padding:10px 20px;
+  border-radius:20px;
+  font-size:14px;
 }
 
-/* ===== BOTTOM NAV ===== */
+/* ICON GRID */
+.icon-grid{
+  background:#fff;
+  margin:14px;
+  border-radius:14px;
+  padding:14px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  text-align:center;
+}
+.icon-item img{
+  width:44px;
+  height:44px;
+}
+.icon-item p{
+  font-size:12px;
+  margin-top:6px;
+}
+
+/* CARD */
+.card{
+  background:#fff;
+  margin:14px;
+  border-radius:14px;
+  overflow:hidden;
+}
+.card img{
+  width:100%;
+  display:block;
+}
+.card .text{
+  padding:12px;
+}
+.card h4{
+  font-size:15px;
+  margin-bottom:6px;
+}
+.card p{
+  font-size:13px;
+  color:#666;
+}
+
+/* BOTTOM NAV */
 .bottom-nav{
   position:fixed;
   bottom:0;
@@ -70,33 +136,30 @@ body{
   text-decoration:none;
 }
 .nav-item img{
-  width:45px;
-  height:45px;
+  width:40px;
+  height:40px;
   display:block;
   margin:0 auto;
 }
-
-/* ACTIVE */
 .nav-item.active{
   color:red;
 }
 .nav-item.active img{
   filter: brightness(0) saturate(100%) invert(18%) sepia(96%)
-          saturate(7450%) hue-rotate(356deg)
-          brightness(95%) contrast(120%);
+          saturate(7450%) hue-rotate(356deg);
 }
 
-/* ===== INVITE FLOAT BUTTON (GLOBAL FIX) ===== */
+/* INVITE CENTER BUTTON */
 .invite-btn{
   position:fixed;
-  bottom:38px;          /* ⭐ PERFECT POSITION */
+  bottom:40px;
   left:50%;
   transform:translateX(-50%);
   z-index:1000;
 }
 .invite-btn img{
-  width:72px;
-  height:72px;
+  width:70px;
+  height:70px;
 }
 </style>
 </head>
@@ -109,18 +172,59 @@ body{
   Activity
 </div>
 
-<!-- PAGE CONTENT -->
-<div class="content">
-  <div class="card">Activity Award</div>
-  <div class="card">Invitation Bonus</div>
-  <div class="card">Betting Rebate</div>
-  <div class="card">First Gift</div>
+<!-- TOP -->
+<div class="top">
+  <h2>L7 LOTTERY7</h2>
+  <div class="bonus-row">
+    <div class="bonus-box">
+      <p>Today's bonus</p>
+      <strong>₹0.00</strong>
+    </div>
+    <div class="bonus-box">
+      <p>Total bonus</p>
+      <strong>₹0.00</strong>
+    </div>
+  </div>
+  <button class="bonus-btn">Bonus details</button>
 </div>
 
-<!-- INVITE FLOAT BUTTON (OUTSIDE NAV) -->
-<a href="invite.html" class="invite-btn">
-  <img src="Image/Invite.png" alt="Invite">
-</a>
+<!-- ICON GRID -->
+<div class="icon-grid">
+  <div class="icon-item">
+    <img src="Image/activity_award.png">
+    <p>Activity Award</p>
+  </div>
+  <div class="icon-item">
+    <img src="Image/invite_bonus.png">
+    <p>Invitation bonus</p>
+  </div>
+  <div class="icon-item">
+    <img src="Image/rebate.png">
+    <p>Betting rebate</p>
+  </div>
+  <div class="icon-item">
+    <img src="Image/gift.png">
+    <p>First gift</p>
+  </div>
+</div>
+
+<!-- GIFTS -->
+<div class="card">
+  <img src="Image/gifts_banner.png">
+  <div class="text">
+    <h4>Gifts</h4>
+    <p>Enter the redemption code to receive gift rewards</p>
+  </div>
+</div>
+
+<!-- ATTENDANCE -->
+<div class="card">
+  <img src="Image/attendance.png">
+  <div class="text">
+    <h4>Attendance bonus</h4>
+    <p>The more consecutive days you sign in, the higher the reward will be.</p>
+  </div>
+</div>
 
 <!-- BOTTOM NAV -->
 <div class="bottom-nav">
@@ -145,5 +249,10 @@ body{
   </a>
 </div>
 
+<!-- INVITE BUTTON -->
+<a href="invite.html" class="invite-btn">
+  <img src="Image/Invite.png">
+</a>
+
 </body>
-</html>
+      </html>
