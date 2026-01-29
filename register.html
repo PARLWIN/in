@@ -3,154 +3,187 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Register | EarnNow</title>
+<title>Register</title>
 
 <style>
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body{
-  background:#f5f6fb;
   min-height:100vh;
+  background: url("Image/Background.png") no-repeat top center;
+  background-size: cover;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  padding:20px;
+}
+
+.container{
+  width:100%;
+  max-width:380px;
+  background:#fff;
+  border-radius:18px;
+  padding:20px;
+  margin-top:120px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+h2{
+  text-align:center;
+  margin-bottom:6px;
+}
+
+.subtitle{
+  text-align:center;
+  color:#777;
+  font-size:14px;
+  margin-bottom:18px;
+}
+
+/* INPUT BOX */
+.input-box{
   display:flex;
   align-items:center;
-  justify-content:center;
+  background:#f5f5f5;
+  border-radius:12px;
+  padding:12px;
+  margin-bottom:12px;
 }
 
-/* CARD */
-.card{
+.input-box img{
+  width:22px;
+  margin-right:10px;
+  opacity:.8;
+}
+
+.input-box input{
+  border:none;
+  outline:none;
+  background:none;
   width:100%;
-  max-width:360px;
-  background:#fff;
-  border-radius:16px;
-  padding:20px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  font-size:15px;
 }
 
-/* HEADER */
-.header{
-  text-align:center;
-  margin-bottom:20px;
-}
-.header h2{
-  color:#ff4d4d;
-  margin-bottom:6px;
-}
-.header p{
-  font-size:13px;
-  color:#777;
-}
-
-/* INPUTS */
-.form-group{
-  margin-bottom:14px;
-}
-.form-group label{
-  font-size:13px;
-  color:#555;
-  display:block;
-  margin-bottom:6px;
-}
-.form-group input{
-  width:100%;
-  height:44px;
-  border:1px solid #ddd;
-  border-radius:10px;
-  padding:0 12px;
-  font-size:14px;
-}
-
-/* INVITE */
-.invite-note{
-  font-size:12px;
-  color:#999;
-  margin-top:4px;
-}
-
-/* BUTTON */
+/* REGISTER BUTTON */
 .btn{
   width:100%;
   height:46px;
   border:none;
   border-radius:30px;
-  background:linear-gradient(90deg,#ff5a5a,#ff8a7a);
+  background:linear-gradient(90deg,#ff3b3b,#ff6a6a);
   color:#fff;
   font-size:16px;
   font-weight:bold;
   margin-top:10px;
-  cursor:pointer;
 }
 
-/* FOOTER */
-.footer{
+/* LOGIN LINK */
+.login-text{
   text-align:center;
-  margin-top:16px;
-  font-size:13px;
+  font-size:14px;
+  margin-top:12px;
 }
-.footer a{
-  color:#ff4d4d;
+
+.login-text a{
+  color:#ff3b3b;
   text-decoration:none;
   font-weight:bold;
+}
+
+/* BOTTOM NAV */
+.bottom-nav{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:70px;
+  background:#fff;
+  border-top:1px solid #ddd;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+}
+
+.nav-item{
+  text-align:center;
+  font-size:12px;
+  color:#999;
+}
+
+.nav-item img{
+  width:26px;
+  display:block;
+  margin:0 auto 4px;
+}
+
+.nav-item.active{
+  color:red;
 }
 </style>
 </head>
 
 <body>
 
-<div class="card">
+<div class="container">
+  <h2>Register</h2>
+  <div class="subtitle">Create your account to start earning</div>
 
-  <div class="header">
-    <h2>Create Account</h2>
-    <p>Register to start earning</p>
+  <div class="input-box">
+    <img src="Image/Name.png">
+    <input type="text" placeholder="Full Name">
   </div>
 
-  <form>
-
-    <div class="form-group">
-      <label>Full Name</label>
-      <input type="text" placeholder="Enter your name">
-    </div>
-
-    <div class="form-group">
-      <label>Phone / Email</label>
-      <input type="text" placeholder="Enter phone or email">
-    </div>
-
-    <div class="form-group">
-      <label>Password</label>
-      <input type="password" placeholder="Create password">
-    </div>
-
-    <div class="form-group">
-      <label>Confirm Password</label>
-      <input type="password" placeholder="Confirm password">
-    </div>
-
-    <!-- INVITE CODE -->
-    <div class="form-group">
-      <label>Invite Code (Optional)</label>
-      <input type="text" placeholder="Enter referral code">
-      <div class="invite-note">
-        If you have a referral code, enter it here
-      </div>
-    </div>
-
-    <button class="btn" type="button">
-      Register
-    </button>
-
-  </form>
-
-  <div class="footer">
-    Already have an account?
-    <a href="login.html">Login</a>
+  <div class="input-box">
+    <img src="Image/Phone.png">
+    <input type="text" placeholder="Phone Number">
   </div>
 
+  <div class="input-box">
+    <img src="Image/Password.png">
+    <input type="password" placeholder="Password">
+  </div>
+
+  <div class="input-box">
+    <img src="Image/Password.png">
+    <input type="password" placeholder="Confirm Password">
+  </div>
+
+  <div class="input-box">
+    <img src="Image/Invite.png">
+    <input type="text" placeholder="Invite Code (Optional)">
+  </div>
+
+  <button class="btn">Register</button>
+
+  <div class="login-text">
+    Already have an account? <a href="login.html">Login</a>
+  </div>
+</div>
+
+<!-- BOTTOM NAV -->
+<div class="bottom-nav">
+  <div class="nav-item">
+    <img src="Image/Home.png">
+    Home
+  </div>
+  <div class="nav-item active">
+    <img src="Image/Task.png">
+    Tasks
+  </div>
+  <div class="nav-item">
+    <img src="Image/Wallet.png">
+    Wallet
+  </div>
+  <div class="nav-item">
+    <img src="Image/Account.png">
+    Account
+  </div>
 </div>
 
 </body>
-</html>
+  </html>
