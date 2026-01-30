@@ -17,18 +17,12 @@
 body{
   min-height:100vh;
   background:#f2f2f2;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  padding:100px 0 90px;
   position:relative;
-  overflow-x:hidden;
+  padding-bottom:90px;
 }
 
 /* ================= BACKGROUND ================= */
-body::before{
-  content:"";
+.bg{
   position:fixed;
   top:0;
   left:0;
@@ -36,33 +30,30 @@ body::before{
   height:280px;
   background:url("Image/Background.png") no-repeat center top;
   background-size:cover;
-  z-index:-2;
+  z-index:-1;
 }
 
 /* ================= LOGO ================= */
 .logo{
-  position:absolute;
-  top:32px;
-  left:50%;
-  transform:translateX(-50%);
-  z-index:2;
+  position:fixed;
+  top:26px;
+  left:20px;
+  z-index:5;
 }
 
 .logo img{
-  width:170px;
-  display:block;
+  width:150px;
 }
 
 /* ================= CARD ================= */
 .card{
   width:90%;
   max-width:420px;
+  margin:220px auto 0;
   background:#fff;
   border-radius:22px;
   padding:26px 18px;
   box-shadow:0 18px 40px rgba(0,0,0,.15);
-  position:relative;
-  z-index:1;
 }
 
 /* ================= TITLE ================= */
@@ -141,7 +132,6 @@ body::before{
   display:flex;
   justify-content:space-around;
   align-items:center;
-  z-index:5;
 }
 
 .nav-item{
@@ -158,6 +148,7 @@ body::before{
   margin:0 auto 4px;
 }
 
+/* 👇 ONLY ACCOUNT ACTIVE */
 .nav-item.active{
   color:#ff3b3b;
 }
@@ -165,6 +156,8 @@ body::before{
 </head>
 
 <body>
+
+<div class="bg"></div>
 
 <!-- LOGO -->
 <div class="logo">
@@ -189,7 +182,8 @@ body::before{
   <button class="btn">Login</button>
 
   <div class="login-text">
-    Don’t have an account? <span onclick="location.href='register.html'">Register</span>
+    Don’t have an account?
+    <span onclick="location.href='register.html'">Register</span>
   </div>
 </div>
 
@@ -207,8 +201,8 @@ body::before{
     <img src="Image/Wallet.png">Wallet
   </a>
 
-  <a href="account.html" class="nav-item active">
-    <img src="Image/Name.png">Account
+  <a href="login.html" class="nav-item active">
+    <img src="Image/Account.png">Account
   </a>
 </div>
 
