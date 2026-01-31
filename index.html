@@ -3,98 +3,111 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard | ADSVERO</title>
+<title>Home | ADSVERO</title>
 
 <style>
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:Arial,Helvetica,sans-serif;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-  background:#f4f4f4;
+  background:#f2f2f2;
   padding-bottom:90px;
 }
 
-/* HEADER */
-.header{
+/* TOP BAR */
+.top-bar{
   background:linear-gradient(90deg,#ff3b3b,#ff7a6a);
-  padding:18px;
+  padding:14px;
   color:#fff;
-  border-bottom-left-radius:22px;
-  border-bottom-right-radius:22px;
-}
-
-.header-top{
   display:flex;
   justify-content:space-between;
   align-items:center;
 }
 
-.header-top h2{
-  font-size:20px;
-}
-
-.balance{
+.top-left{
+  display:flex;
+  align-items:center;
+  gap:8px;
   font-weight:700;
-  font-size:16px;
 }
 
+.top-left img{
+  width:28px;
+}
+
+.wallet{
+  font-weight:700;
+  background:rgba(255,255,255,.2);
+  padding:6px 12px;
+  border-radius:20px;
+}
+
+/* BANNER */
 .banner{
-  margin-top:18px;
+  background:linear-gradient(90deg,#ff3b3b,#ff7a6a);
+  margin:14px;
+  border-radius:16px;
+  padding:16px;
   display:flex;
-  align-items:center;
   justify-content:space-between;
+  align-items:center;
+  color:#fff;
 }
 
-.banner-text h1{
+.banner h1{
   font-size:22px;
   margin-bottom:6px;
 }
 
-.banner-text p{
+.banner p{
   font-size:14px;
   opacity:.9;
 }
 
+.banner img{
+  width:120px;
+}
+
 /* QUICK BUTTONS */
 .quick{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
-  padding:16px;
+  display:flex;
+  justify-content:space-around;
+  margin:16px 10px;
 }
 
 .quick div{
   background:#fff;
+  width:22%;
   border-radius:14px;
   padding:12px 6px;
   text-align:center;
+  box-shadow:0 6px 16px rgba(0,0,0,.1);
   font-size:12px;
-  font-weight:600;
-  box-shadow:0 4px 10px rgba(0,0,0,.08);
+  font-weight:700;
 }
 
-.quick div span{
-  display:block;
-  margin-top:6px;
+.quick img{
+  width:36px;
+  margin-bottom:6px;
 }
 
-/* TASKS */
+/* TASK SECTION */
 .section{
-  padding:0 16px;
+  margin:14px;
 }
 
-.section h3{
+.section h2{
   font-size:18px;
   margin-bottom:4px;
 }
 
 .section p{
-  font-size:13px;
   color:#777;
+  font-size:13px;
   margin-bottom:12px;
 }
 
@@ -106,35 +119,37 @@ body{
   box-shadow:0 6px 16px rgba(0,0,0,.1);
 }
 
-.task-top{
+.task-row{
   display:flex;
   justify-content:space-between;
   align-items:center;
 }
 
-.task h4{
-  font-size:15px;
-}
-
-.task small{
-  color:#777;
-}
-
-.btn{
-  border:none;
-  padding:10px 18px;
-  border-radius:10px;
+.task-title{
   font-weight:700;
-  cursor:pointer;
+}
+
+.task-sub{
+  font-size:13px;
+  color:#777;
+  margin-top:4px;
 }
 
 .start{
   background:#ffc107;
+  border:none;
+  padding:10px 16px;
+  border-radius:10px;
+  font-weight:700;
 }
 
 .done{
-  background:#2ecc71;
+  background:#28a745;
   color:#fff;
+  border:none;
+  padding:10px 16px;
+  border-radius:10px;
+  font-weight:700;
 }
 
 /* BOTTOM NAV */
@@ -143,11 +158,12 @@ body{
   bottom:0;
   left:0;
   width:100%;
+  height:70px;
   background:#fff;
   border-top:1px solid #ddd;
   display:flex;
   justify-content:space-around;
-  padding:10px 0;
+  align-items:center;
 }
 
 .nav-item{
@@ -157,7 +173,13 @@ body{
   font-weight:700;
 }
 
-.nav-item.active{
+.nav-item img{
+  width:26px;
+  display:block;
+  margin:0 auto 4px;
+}
+
+.active{
   color:#ff3b3b;
 }
 </style>
@@ -165,85 +187,65 @@ body{
 
 <body>
 
-<!-- HEADER -->
-<div class="header">
-  <div class="header-top">
-    <h2>ADSVERO</h2>
-    <div class="balance">₹ <span id="wallet">0</span></div>
+<!-- TOP -->
+<div class="top-bar">
+  <div class="top-left">
+    <img src="Image/logo.png">
+    ADSVERO
   </div>
+  <div class="wallet">₹ 00.00</div>
+</div>
 
-  <div class="banner">
-    <div class="banner-text">
-      <h1>Watch Ads & Earn Rewards!</h1>
-      <p>Complete daily tasks & get paid</p>
-    </div>
+<!-- BANNER -->
+<div class="banner">
+  <div>
+    <h1>Watch Ads & Earn Rewards!</h1>
+    <p>Complete daily tasks & get paid</p>
   </div>
+  <img src="Image/Banner.png">
 </div>
 
 <!-- QUICK BUTTONS -->
 <div class="quick">
-  <div>▶️<span>Watch Ads</span></div>
-  <div>✅<span>Daily Tasks</span></div>
-  <div>🎁<span>Rewards</span></div>
-  <div>🏦<span>Withdraw</span></div>
+  <div><img src="Image/Watch.png"><br>Watch Ads</div>
+  <div><img src="Image/Task.png"><br>Daily Tasks</div>
+  <div><img src="Image/Reward.png"><br>Rewards</div>
+  <div><img src="Image/Withdraw.png"><br>Withdraw</div>
 </div>
 
 <!-- TASKS -->
 <div class="section">
-  <h3>Today's Tasks</h3>
+  <h2>Today's Tasks</h2>
   <p>Complete the ads & earn rewards</p>
 
   <div class="task">
-    <div class="task-top">
+    <div class="task-row">
       <div>
-        <h4>Ad Task 1</h4>
-        <small>Watch Video (30 sec)</small>
+        <div class="task-title">Ad Task 1</div>
+        <div class="task-sub">Watch Video (30 sec)</div>
       </div>
-      <button class="btn start" onclick="startTask(this,2)">START</button>
+      <button class="start">START</button>
     </div>
   </div>
 
   <div class="task">
-    <div class="task-top">
+    <div class="task-row">
       <div>
-        <h4>Ad Task 2</h4>
-        <small>Completed</small>
+        <div class="task-title">Ad Task 2</div>
+        <div class="task-sub">Completed</div>
       </div>
-      <button class="btn done">DONE</button>
+      <button class="done">DONE</button>
     </div>
   </div>
 </div>
 
 <!-- BOTTOM NAV -->
 <div class="bottom-nav">
-  <div class="nav-item active">Home</div>
-  <div class="nav-item">Tasks</div>
-  <div class="nav-item">Wallet</div>
-  <div class="nav-item">Account</div>
+  <div class="nav-item active"><img src="Image/home.png">Home</div>
+  <div class="nav-item"><img src="Image/task.png">Tasks</div>
+  <div class="nav-item"><img src="Image/wallet.png">Wallet</div>
+  <div class="nav-item"><img src="Image/Name.png">Account</div>
 </div>
-
-<script>
-/* LOGIN CHECK */
-if(!localStorage.getItem("user")){
-  window.location.href="login.html";
-}
-
-/* WALLET */
-let wallet = localStorage.getItem("wallet") || 0;
-document.getElementById("wallet").innerText = wallet;
-
-/* TASK */
-function startTask(btn,amount){
-  btn.innerText="DONE";
-  btn.classList.remove("start");
-  btn.classList.add("done");
-  btn.disabled=true;
-
-  wallet = parseInt(wallet) + amount;
-  localStorage.setItem("wallet",wallet);
-  document.getElementById("wallet").innerText = wallet;
-}
-</script>
 
 </body>
 </html>
