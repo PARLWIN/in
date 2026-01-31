@@ -209,29 +209,31 @@ body::before{
   </a>
 </div>
 <script>
-document.getElementById("registerBtn").addEventListener("click", function () {
+document.querySelector(".btn").addEventListener("click", function () {
 
-    const phone = document.getElementById("phone").value.trim();
-    const password = document.getElementById("password").value.trim();
-    const invite = document.getElementById("invite").value.trim();
+  const name = document.querySelector('input[placeholder="Full Name"]').value.trim();
+  const phone = document.querySelector('input[placeholder="Phone Number"]').value.trim();
+  const password = document.querySelector('input[placeholder="Password"]').value.trim();
+  const confirm = document.querySelector('input[placeholder="Confirm Password"]').value.trim();
 
-    if (phone === "" || password === "") {
-        alert("Phone aur Password required ❌");
-        return;
-    }
+  if (!name || !phone || !password || !confirm) {
+    alert("All fields required");
+    return;
+  }
 
-    const userData = {
-        phone: phone,
-        password: password,
-        invite: invite
-    };
+  if (password !== confirm) {
+    alert("Password not match");
+    return;
+  }
 
-    localStorage.setItem("registerUser", JSON.stringify(userData));
+  // ✅ SAVE DATA
+  localStorage.setItem("userName", name);
+  localStorage.setItem("userPhone", phone);
+  localStorage.setItem("userPassword", password);
 
-    alert("Registration successful ✅");
-
-    window.location.href = "login.html";
+  alert("Registration successful ✅");
+  window.location.href = "login.html";
 });
-</script>
+                                                </script>
 </body>
 </html>
