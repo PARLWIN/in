@@ -10,93 +10,131 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+  background:#f4f4f4;
+  padding-bottom:90px;
 }
 
 /* HEADER */
 .header{
   background:linear-gradient(90deg,#ff3b3b,#ff7a6a);
-  padding:16px;
+  padding:18px;
   color:#fff;
+  border-bottom-left-radius:22px;
+  border-bottom-right-radius:22px;
+}
+
+.header-top{
   display:flex;
   justify-content:space-between;
   align-items:center;
 }
-.header-left{
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
-.header-left img{
-  width:26px;
-}
-.wallet{
-  font-weight:700;
+
+.header-top h2{
+  font-size:20px;
 }
 
-/* BANNER */
+.balance{
+  font-weight:700;
+  font-size:16px;
+}
+
 .banner{
-  background:linear-gradient(90deg,#ff3b3b,#ff7a6a);
-  color:#fff;
-  padding:20px;
-  border-bottom-left-radius:22px;
-  border-bottom-right-radius:22px;
+  margin-top:18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
-.banner h2{
+
+.banner-text h1{
   font-size:22px;
+  margin-bottom:6px;
 }
-.banner p{
+
+.banner-text p{
   font-size:14px;
-  margin-top:6px;
+  opacity:.9;
 }
 
 /* QUICK BUTTONS */
 .quick{
-  display:flex;
-  justify-content:space-around;
-  margin:18px 0;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  padding:16px;
 }
+
 .quick div{
-  width:22%;
   background:#fff;
   border-radius:14px;
   padding:12px 6px;
   text-align:center;
-  box-shadow:0 6px 16px rgba(0,0,0,.12);
   font-size:12px;
-  font-weight:700;
+  font-weight:600;
+  box-shadow:0 4px 10px rgba(0,0,0,.08);
 }
 
-/* TASK LIST */
-.task-box{
+.quick div span{
+  display:block;
+  margin-top:6px;
+}
+
+/* TASKS */
+.section{
+  padding:0 16px;
+}
+
+.section h3{
+  font-size:18px;
+  margin-bottom:4px;
+}
+
+.section p{
+  font-size:13px;
+  color:#777;
+  margin-bottom:12px;
+}
+
+.task{
   background:#fff;
-  margin:12px;
   border-radius:16px;
   padding:14px;
-  box-shadow:0 6px 18px rgba(0,0,0,.12);
+  margin-bottom:12px;
+  box-shadow:0 6px 16px rgba(0,0,0,.1);
 }
-.task{
+
+.task-top{
   display:flex;
   justify-content:space-between;
   align-items:center;
 }
-.task p{
-  font-size:14px;
+
+.task h4{
+  font-size:15px;
 }
+
+.task small{
+  color:#777;
+}
+
+.btn{
+  border:none;
+  padding:10px 18px;
+  border-radius:10px;
+  font-weight:700;
+  cursor:pointer;
+}
+
 .start{
   background:#ffc107;
-  border:none;
-  padding:8px 14px;
-  border-radius:8px;
-  font-weight:700;
 }
+
 .done{
-  background:#28a745;
+  background:#2ecc71;
   color:#fff;
-  border:none;
-  padding:8px 14px;
-  border-radius:8px;
-  font-weight:700;
 }
 
 /* BOTTOM NAV */
@@ -105,26 +143,22 @@
   bottom:0;
   left:0;
   width:100%;
-  height:70px;
   background:#fff;
   border-top:1px solid #ddd;
   display:flex;
   justify-content:space-around;
-  align-items:center;
+  padding:10px 0;
 }
+
 .nav-item{
   text-align:center;
   font-size:12px;
-  font-weight:700;
   color:#999;
+  font-weight:700;
 }
+
 .nav-item.active{
   color:#ff3b3b;
-}
-.nav-item img{
-  width:26px;
-  display:block;
-  margin:0 auto 4px;
 }
 </style>
 </head>
@@ -133,69 +167,81 @@
 
 <!-- HEADER -->
 <div class="header">
-  <div class="header-left">
-    <img src="Image/logo.png">
-    <strong>ADSVERO</strong>
+  <div class="header-top">
+    <h2>ADSVERO</h2>
+    <div class="balance">₹ <span id="wallet">0</span></div>
   </div>
-  <div class="wallet">₹ <span id="balance">0.00</span></div>
+
+  <div class="banner">
+    <div class="banner-text">
+      <h1>Watch Ads & Earn Rewards!</h1>
+      <p>Complete daily tasks & get paid</p>
+    </div>
+  </div>
 </div>
 
-<!-- BANNER -->
-<div class="banner">
-  <h2>Watch Ads & Earn Rewards!</h2>
-  <p>Complete daily tasks & get paid</p>
-</div>
-
-<!-- QUICK ACTIONS -->
+<!-- QUICK BUTTONS -->
 <div class="quick">
-  <div>Watch Ads</div>
-  <div>Daily Tasks</div>
-  <div>Rewards</div>
-  <div>Withdraw</div>
+  <div>▶️<span>Watch Ads</span></div>
+  <div>✅<span>Daily Tasks</span></div>
+  <div>🎁<span>Rewards</span></div>
+  <div>🏦<span>Withdraw</span></div>
 </div>
 
 <!-- TASKS -->
-<div class="task-box">
-  <h3>Today's Tasks</h3><br>
+<div class="section">
+  <h3>Today's Tasks</h3>
+  <p>Complete the ads & earn rewards</p>
 
   <div class="task">
-    <p>Ad Task 1<br><small>Watch Video (30 sec)</small></p>
-    <button class="start" onclick="completeTask()">START</button>
+    <div class="task-top">
+      <div>
+        <h4>Ad Task 1</h4>
+        <small>Watch Video (30 sec)</small>
+      </div>
+      <button class="btn start" onclick="startTask(this,2)">START</button>
+    </div>
+  </div>
+
+  <div class="task">
+    <div class="task-top">
+      <div>
+        <h4>Ad Task 2</h4>
+        <small>Completed</small>
+      </div>
+      <button class="btn done">DONE</button>
+    </div>
   </div>
 </div>
 
 <!-- BOTTOM NAV -->
 <div class="bottom-nav">
-  <div class="nav-item active">
-    <img src="Image/Home.png">Home
-  </div>
-  <div class="nav-item">
-    <img src="Image/Task.png">Tasks
-  </div>
-  <div class="nav-item">
-    <img src="Image/Wallet.png">Wallet
-  </div>
-  <div class="nav-item">
-    <img src="Image/Name.png">Account
-  </div>
+  <div class="nav-item active">Home</div>
+  <div class="nav-item">Tasks</div>
+  <div class="nav-item">Wallet</div>
+  <div class="nav-item">Account</div>
 </div>
 
 <script>
-/* 🔐 LOGIN PROTECTION */
-if (!localStorage.getItem("userPhone")) {
-  window.location.href = "login.html";
+/* LOGIN CHECK */
+if(!localStorage.getItem("user")){
+  window.location.href="login.html";
 }
 
-/* 💰 BALANCE */
-let balance = localStorage.getItem("wallet") || 0;
-document.getElementById("balance").innerText = balance;
+/* WALLET */
+let wallet = localStorage.getItem("wallet") || 0;
+document.getElementById("wallet").innerText = wallet;
 
-/* 🎯 TASK */
-function completeTask(){
-  balance = parseFloat(balance) + 2;
-  localStorage.setItem("wallet", balance);
-  document.getElementById("balance").innerText = balance.toFixed(2);
-  alert("Task completed! ₹2 added");
+/* TASK */
+function startTask(btn,amount){
+  btn.innerText="DONE";
+  btn.classList.remove("start");
+  btn.classList.add("done");
+  btn.disabled=true;
+
+  wallet = parseInt(wallet) + amount;
+  localStorage.setItem("wallet",wallet);
+  document.getElementById("wallet").innerText = wallet;
 }
 </script>
 
