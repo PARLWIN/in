@@ -168,12 +168,12 @@ body::before{
 
   <div class="input-box">
     <img src="Image/Phone.png">
-    <input type="text" placeholder="Phone Number">
+    <input type="text" id="phone" placeholder="Phone Number">
   </div>
 
   <div class="input-box">
     <img src="Image/Password.png">
-    <input type="password" placeholder="Password">
+    <input type="password" id="password" placeholder="Password">
   </div>
 
   <div class="input-box">
@@ -183,10 +183,10 @@ body::before{
 
   <div class="input-box">
     <img src="Image/Invite.png">
-    <input type="text" placeholder="Invite Code (Optional)">
+    <input type="text" id="invite" placeholder="Invite Code (Optional)">
   </div>
 
-  <button class="btn">Register</button>
+<button class="btn" id="registerBtn">Register</button>
 
   <div class="login-text">
     Already have an account?
@@ -208,6 +208,30 @@ body::before{
     <img src="Image/Name.png">Account
   </a>
 </div>
+<script>
+document.getElementById("registerBtn").addEventListener("click", function () {
 
+    const phone = document.getElementById("phone").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const invite = document.getElementById("invite").value.trim();
+
+    if (phone === "" || password === "") {
+        alert("Phone aur Password required ❌");
+        return;
+    }
+
+    const userData = {
+        phone: phone,
+        password: password,
+        invite: invite
+    };
+
+    localStorage.setItem("registerUser", JSON.stringify(userData));
+
+    alert("Registration successful ✅");
+
+    window.location.href = "login.html";
+});
+</script>
 </body>
 </html>
