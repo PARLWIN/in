@@ -3,74 +3,100 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard</title>
+<title>Dashboard | ADSVERO</title>
 
 <style>
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family: Arial, sans-serif;
-}
-body{
-  background:#f6f7fb;
-  padding-bottom:90px;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
 /* HEADER */
 .header{
-  background:linear-gradient(90deg,#ff6b6b,#ff8e8e);
-  padding:14px;
-  text-align:center;
+  background:linear-gradient(90deg,#ff3b3b,#ff7a6a);
+  padding:16px;
   color:#fff;
-  font-size:18px;
-  font-weight:bold;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.header-left{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.header-left img{
+  width:26px;
+}
+.wallet{
+  font-weight:700;
 }
 
-/* BALANCE CARD */
-.balance{
-  margin:14px;
-  background:#fff;
-  border-radius:16px;
-  padding:16px;
+/* BANNER */
+.banner{
+  background:linear-gradient(90deg,#ff3b3b,#ff7a6a);
+  color:#fff;
+  padding:20px;
+  border-bottom-left-radius:22px;
+  border-bottom-right-radius:22px;
 }
-.balance h4{
+.banner h2{
+  font-size:22px;
+}
+.banner p{
   font-size:14px;
-  color:#777;
-}
-.balance .amount{
-  font-size:28px;
-  font-weight:bold;
   margin-top:6px;
 }
 
-/* QUICK ACTIONS */
-.actions{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:10px;
-  margin:14px;
+/* QUICK BUTTONS */
+.quick{
+  display:flex;
+  justify-content:space-around;
+  margin:18px 0;
 }
-.action{
+.quick div{
+  width:22%;
   background:#fff;
   border-radius:14px;
-  padding:12px 0;
+  padding:12px 6px;
   text-align:center;
+  box-shadow:0 6px 16px rgba(0,0,0,.12);
   font-size:12px;
-}
-.action img{
-  width:32px;
-  margin-bottom:6px;
+  font-weight:700;
 }
 
-/* NOTICE */
-.notice{
-  margin:14px;
-  background:#fff3cd;
-  color:#856404;
-  padding:12px;
-  border-radius:12px;
-  font-size:13px;
+/* TASK LIST */
+.task-box{
+  background:#fff;
+  margin:12px;
+  border-radius:16px;
+  padding:14px;
+  box-shadow:0 6px 18px rgba(0,0,0,.12);
+}
+.task{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.task p{
+  font-size:14px;
+}
+.start{
+  background:#ffc107;
+  border:none;
+  padding:8px 14px;
+  border-radius:8px;
+  font-weight:700;
+}
+.done{
+  background:#28a745;
+  color:#fff;
+  border:none;
+  padding:8px 14px;
+  border-radius:8px;
+  font-weight:700;
 }
 
 /* BOTTOM NAV */
@@ -79,31 +105,26 @@ body{
   bottom:0;
   left:0;
   width:100%;
-  height:75px;
+  height:70px;
   background:#fff;
   border-top:1px solid #ddd;
   display:flex;
   justify-content:space-around;
   align-items:center;
 }
-
 .nav-item{
   text-align:center;
   font-size:12px;
+  font-weight:700;
   color:#999;
-  text-decoration:none;
-}
-.nav-item img{
-  width:32px;
-  display:block;
-  margin:0 auto 4px;
 }
 .nav-item.active{
-  color:#ff6b6b;
+  color:#ff3b3b;
 }
-.nav-item.active img{
-  filter: brightness(0) saturate(100%) invert(41%) sepia(91%)
-          saturate(2335%) hue-rotate(337deg) brightness(99%) contrast(101%);
+.nav-item img{
+  width:26px;
+  display:block;
+  margin:0 auto 4px;
 }
 </style>
 </head>
@@ -112,71 +133,70 @@ body{
 
 <!-- HEADER -->
 <div class="header">
-  My Earning App
+  <div class="header-left">
+    <img src="Image/logo.png">
+    <strong>ADSVERO</strong>
+  </div>
+  <div class="wallet">₹ <span id="balance">0.00</span></div>
 </div>
 
-<!-- BALANCE -->
-<div class="balance">
-  <h4>Total Balance</h4>
-  <div class="amount">₹ <span id="balance">0</span></div>
+<!-- BANNER -->
+<div class="banner">
+  <h2>Watch Ads & Earn Rewards!</h2>
+  <p>Complete daily tasks & get paid</p>
 </div>
 
 <!-- QUICK ACTIONS -->
-<div class="actions">
-  <div class="action">
-    <img src="Image/plan.png">
-    <div>Plans</div>
-  </div>
-  <div class="action">
-    <img src="Image/watch.png">
-    <div>Watch Ads</div>
-  </div>
-  <div class="action">
-    <img src="Image/task.png">
-    <div>Tasks</div>
-  </div>
-  <div class="action">
-    <img src="Image/reward.png">
-    <div>Rewards</div>
-  </div>
+<div class="quick">
+  <div>Watch Ads</div>
+  <div>Daily Tasks</div>
+  <div>Rewards</div>
+  <div>Withdraw</div>
 </div>
 
-<!-- NOTICE -->
-<div class="notice">
-  ⚠️ Account inactive. Please purchase a plan to start earning.
+<!-- TASKS -->
+<div class="task-box">
+  <h3>Today's Tasks</h3><br>
+
+  <div class="task">
+    <p>Ad Task 1<br><small>Watch Video (30 sec)</small></p>
+    <button class="start" onclick="completeTask()">START</button>
+  </div>
 </div>
 
 <!-- BOTTOM NAV -->
 <div class="bottom-nav">
-  <a href="index.html" class="nav-item active">
-    <img src="Image/home.png">
-    Home
-  </a>
-
-  <a href="plans.html" class="nav-item">
-    <img src="Image/plan.png">
-    Plans
-  </a>
-
-  <a href="watch-ads.html" class="nav-item">
-    <img src="Image/watch.png">
-    Ads
-  </a>
-
-  <a href="wallet.html" class="nav-item">
-    <img src="Image/wallet.png">
-    Wallet
-  </a>
-
-  <a href="account.html" class="nav-item">
-    <img src="Image/account.png">
-    Account
-  </a>
+  <div class="nav-item active">
+    <img src="Image/Home.png">Home
+  </div>
+  <div class="nav-item">
+    <img src="Image/Task.png">Tasks
+  </div>
+  <div class="nav-item">
+    <img src="Image/Wallet.png">Wallet
+  </div>
+  <div class="nav-item">
+    <img src="Image/Name.png">Account
+  </div>
 </div>
 
 <script>
-document.getElementById("balance").innerText =
-  localStorage.getItem("balance") || 0;
+/* 🔐 LOGIN PROTECTION */
+if (!localStorage.getItem("userPhone")) {
+  window.location.href = "login.html";
+}
+
+/* 💰 BALANCE */
+let balance = localStorage.getItem("wallet") || 0;
+document.getElementById("balance").innerText = balance;
+
+/* 🎯 TASK */
+function completeTask(){
+  balance = parseFloat(balance) + 2;
+  localStorage.setItem("wallet", balance);
+  document.getElementById("balance").innerText = balance.toFixed(2);
+  alert("Task completed! ₹2 added");
+}
 </script>
 
 </body>
