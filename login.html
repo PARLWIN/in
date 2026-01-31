@@ -93,15 +93,15 @@ body::before{
 
   <div class="input-box">
     <img src="Image/Phone.png">
-    <input type="text" placeholder="Phone Number">
+    <input type="text" id="loginPhone" placeholder="Phone Number">
   </div>
 
   <div class="input-box">
     <img src="Image/Password.png">
-    <input type="password" placeholder="Password">
+    <input type="password" id="loginPassword" placeholder="Password">
   </div>
 
-  <button class="btn">Login</button>
+  <button class="btn" id="loginBtn">Login</button>
 
   <div class="login-text">
     Don’t have an account?
@@ -115,6 +115,27 @@ body::before{
   <div class="nav-item"><img src="Image/Wallet.png">Wallet</div>
   <div class="nav-item"><img src="Image/Name.png">Account</div>
 </div>
+<script>
+document.getElementById("loginBtn").addEventListener("click", function () {
 
+  const phone = document.getElementById("loginPhone").value.trim();
+  const password = document.getElementById("loginPassword").value.trim();
+
+  const savedPhone = localStorage.getItem("userPhone");
+  const savedPassword = localStorage.getItem("userPassword");
+
+  if (phone === "" || password === "") {
+    alert("Please enter phone and password");
+    return;
+  }
+
+  if (phone === savedPhone && password === savedPassword) {
+    alert("Login Successful ✅");
+    window.location.href = "index.html";
+  } else {
+    alert("Wrong phone or password ❌");
+  }
+});
+</script>
 </body>
 </html>
